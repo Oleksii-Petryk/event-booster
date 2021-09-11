@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /event-booster/",
-     "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
   },
   "repository": {

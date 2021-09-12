@@ -1,50 +1,50 @@
 .events {
   display: flex;
   flex-wrap: wrap;
-  margin-left: var(--grid-margin-min);
-  margin-top: var(--grid-margin-min);
+  margin-left: var(--grid-margin-out);
+  margin-top: var(--grid-margin-out);
 
   @media screen and (min-width: 767.98px) {
-    --grid-margin-min: -30px;
+    --grid-margin-out: -30px;
   }
 
   @media screen and (min-width: 1279.98px) {
-    --grid-margin-min: -70px;
+    --grid-margin-out: -70px;
   }
 }
 
 .events__item {
-  flex-basis: calc((100% - var(--grid-margin) * var(--grid-item)) / var(--grid-item));
-  margin-left: var(--grid-margin);
-  margin-top: var(--grid-margin);
-  margin-bottom: 39px;
+  flex-basis: calc((100% - var(--grid-margin-in) * var(--grid-item)) / var(--grid-item));
+  margin-left: var(--grid-margin-in);
+  margin-top: var(--grid-margin-in);
+  margin-bottom: 40px;
   display: block;
   text-align: center;
 
   @media screen and (min-width: 767.98px) {
     --grid-item: 3;
-    --grid-margin: 30px;
-    margin-bottom: 58px;
+    --grid-margin-in: 30px;
+    margin-bottom: 60px;
   }
 
   @media screen and (min-width: 1279.98px) {
     --grid-item: 4;
-    --grid-margin: 70px;
-    margin-bottom: 63px;
+    --grid-margin-in: 70px;
+    margin-bottom: 65px;
   }
 }
 
 .events__container {
   margin-bottom: 5px;
-  width: 128px;
-  height: 161px;
+  width: 130px;
+  height: 160px;
   border-radius: 50px 0px;
   overflow: hidden;
   background-color: green;
 
   @media screen and (min-width: 767.98px) {
     width: 180px;
-    height: 227px;
+    height: 230px;
   }
 }
 
@@ -52,16 +52,16 @@
   position: absolute;
   content: '';
   display: block;
-  width: 109px;
-  height: 101px;
+  width: 110px;
+  height: 100px;
   border: 1px solid rgba(220, 86, 197, 0.3);
   border-radius: 50px 0px;
-  transform: translate(29px, -9px);
+  transform: translate(30px, -10px);
 
   @media screen and (min-width: 767.98px) {
-    width: 153px;
-    height: 143px;
-    transform: translate(41px, -13px);
+    width: 155px;
+    height: 145px;
+    transform: translate(40px, -15px);
   }
 }
 
@@ -106,8 +106,8 @@
 }
 
 .events__icon {
-  width: 6px;
-  height: 9px;
+  width: 5px;
+  height: 10px;
   fill: var(--text-color-descr);
 
   @media screen and (min-width: 767.98px) {

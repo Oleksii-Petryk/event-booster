@@ -1,21 +1,19 @@
 <ul class='events list'>
   {{#each this}}
     <li class='events__item'>
-      <div class='events__container'>
-        <img
-          class='events__image'
-          src='https://javasea.ru/uploads/posts/2018-03/1520034043_vertikalnyy-vzglyad-kotika.jpg'
-          alt=''
-        />
+      <div class='events__container'>        
+        <img class='events__image' src='{{images.0.url}}' alt='' />        
       </div>
-      <h2 class='events__title'>Event</h2>
-      <p class='events__date'>Date</p>
+      <h2 class='events__title'>{{name}}</h2>
+      <p class='events__date'>{{dates.start.localDate}}</p>
+      {{#each _embedded.venues}}
       <p class='events__place'>
-        <svg class='events__icon' width='20' height='20'>
-          <use href='./images/sprite.svg#icon-location'></use>
-        </svg>
-        Place
+        <svg class='events__icon'>
+          <use href='../images/sprite.svg#icon-location'></use>
+        </svg>        
+        {{name}}        
       </p>
+      {{/each}}
     </li>
   {{/each}}
 </ul>

@@ -1,3 +1,3 @@
-export default refs = {
+export default {
 mainContent : document.querySelector('.main-content'),
 };

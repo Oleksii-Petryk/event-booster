@@ -9,7 +9,16 @@
     <header class="header header__bg" id="header">
       <div class="container">
         <h1 class="main__title">FIND BEST EVENTS AROUND THE WORLD</h1>
-        <div class="search__form"></div>
+        <div class="search__box">
+          <form class="search-form">
+            <input type="text" class="search-form__input search-form__input-js search-field" name="event_name"
+              placeholder="Start searching" />
+            <details class="dropdown-menu dropdown-menu-js search-field">
+              <summary>Choose country</summary>
+              <div class="dropdown-menu__list dropdown-menu__list-js"></div>
+            </details>
+          </form>
+        </div>
       </div>
     </header>
     <div class="main__bg">

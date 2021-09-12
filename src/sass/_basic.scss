@@ -4,6 +4,13 @@
   --modal-font-color: #0e0e0e;
   --button-color: #4c00fe;
   --text-color-descr: #ffffff;
+  --grid-item: 2;
+  --grid-margin-in: 15px;
+  --grid-margin-out: -15px;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 ul,
@@ -41,22 +48,26 @@ body {
 }
 
 .container {
-  min-width: 320px;
+  min-width: 290px;
   margin-left: auto;
   margin-right: auto;
 
-  @media screen and (max-width: 767px) {
-    width: 320px;
+  @media screen and (max-width: 768px) {
+    width: 290px;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+  }
+
+  @media screen and (min-width: 767.98px) {
+    width: 630px;
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  @media screen and (min-width: 767.98px) {
-    width: 600px;
-  }
-
   @media screen and (min-width: 1279.98px) {
-    width: 930px;
+    width: 1000px;
+    padding-left: 35px;
+    padding-right: 35px;
   }
 }
 

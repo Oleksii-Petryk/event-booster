@@ -1,0 +1,63 @@
+.footer {
+    color: #939393;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.21;
+    text-align: center;
+    padding: 60px 34px 27px 34px;
+
+    @media screen and (min-width: 768px) {
+        padding: 60px 0 18px 0;
+        font-size: 16px;
+        line-height: 1.25;
+    }
+    @media screen and (min-width: 1280px) {
+        padding: 80px 0 19px 0;
+    }
+    };
+
+.footer-link {
+    text-decoration: none;
+    color: #939393;
+
+    &:hover,
+    &:focus {
+      color: red;
+    }
+}
+
+.footer-heart {
+    color: red;
+    animation: heartbeat 1s infinite;
+    }
+
+/* Heart beat animation */
+@keyframes heartbeat {
+  0% {
+    transform: scale(.75);
+  }
+
+  20% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(.75);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+
+  80% {
+    transform: scale(.75);
+  }
+
+  100% {
+    transform: scale(.75);
+  }
+}
+    
+

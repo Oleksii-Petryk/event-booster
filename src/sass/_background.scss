@@ -1,7 +1,7 @@
 .header__bg {
   margin-right: auto;
   margin-left: auto;
-  border-color: gba(11, 11, 11, 0.5);
+  background-color: gba(11, 11, 11, 0.5);
 
   @media screen and (max-width: 767.98px) {
     background-image: url('../images/logo/mobile/mobile-logo.png'),
@@ -53,19 +53,21 @@
   @media screen and (max-width: 767.98px) {
     background-image: url('../images/bg/main/mobile-bg-body.png');
     background-repeat: no-repeat;
-    background-size: 100% 2786px;
+    background-size: 100% 100%;
   }
 
   @media screen and (min-width: 768px) {
     background-image: url('../images/bg/main/tablet-bg-body.png');
     background-repeat: no-repeat;
-    background-size: 100% 2645px;
+    background-size: 100% 100%;
+    margin-top: 29px;
   }
 
   @media screen and (min-width: 1280px) {
     background-image: url('../images/bg/main/desktop-bg-body.png');
     background-repeat: no-repeat;
-    background-size: 100% 2106px;
+    background-size: 100% 100%;
+    margin-top: 68px;
   }
 }
 

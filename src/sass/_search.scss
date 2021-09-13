@@ -43,18 +43,69 @@
 }
 
 .search-form__input::placeholder {
+  font-family: Montserrat;
+  font-style: normal;
   font-size: 16px;
   line-height: 1.25;
+  color: var(--font-color);
 }
 
 .search-form__input:focus::placeholder {
   opacity: 0;
 }
 
+.input__box {
+  position: relative;
+}
+
+.search-form__icon {
+  position: absolute;
+  top: 50%;
+  right: 60px;
+  transform: translateY(-50%);
+  fill: var(--font-color);
+}
+
 summary {
   padding-top: 10px;
   padding-bottom: 10px;
+  font-family: Montserrat;
+  font-style: normal;
   font-size: 16px;
   line-height: 1.25;
-  text-align: center;
+  color: var(--font-color);
+  text-align: left;
+  list-style: none;
+}
+
+.dropdown-menu {
+  position: relative;
+}
+
+summary::after {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  display: block;
+  content: '';
+  width: 15px;
+  height: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/icons/Polygon.svg);
+}
+
+details[open] summary::after {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  display: block;
+  content: '';
+  width: 15px;
+  height: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/icons/Polygon-open.svg);
 }

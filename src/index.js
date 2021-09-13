@@ -1,5 +1,6 @@
 import './sass/main.scss';
 import DiscoveryApiService from './js/api-service';
+import './js/up';
 
 const discoveryApiService = new DiscoveryApiService();
 

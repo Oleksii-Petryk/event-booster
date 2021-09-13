@@ -18,7 +18,11 @@ export default class DiscoveryApiService {
     async getEventsByInputValue() {
               try {
             const responce = await fetch(`${this.BASE_URL}events.json?keyword=${this.keyWord}&apikey=${this.API_KEY}`)
-            const events = await responce.json();
+                  const events = await responce.json();
+                  if (!events._embedded) {
+                      console.log('erorr немає таких подій!!!')
+                      return;
+                  }
             return events._embedded.events;
         } catch (error) {
             console.log(error);

@@ -3,14 +3,6 @@
   flex-wrap: wrap;
   margin-left: var(--grid-margin-out);
   margin-top: var(--grid-margin-out);
-
-  @media screen and (min-width: 767.98px) {
-    --grid-margin-out: -30px;
-  }
-
-  @media screen and (min-width: 1279.98px) {
-    --grid-margin-out: -70px;
-  }
 }
 
 .events__item {
@@ -22,14 +14,10 @@
   text-align: center;
 
   @media screen and (min-width: 767.98px) {
-    --grid-item: 3;
-    --grid-margin-in: 30px;
     margin-bottom: 60px;
   }
 
   @media screen and (min-width: 1279.98px) {
-    --grid-item: 4;
-    --grid-margin-in: 70px;
     margin-bottom: 65px;
   }
 }
@@ -40,7 +28,7 @@
   height: 160px;
   border-radius: 50px 0px;
   overflow: hidden;
-  background-color: green;
+  background-color: var(--modal-font-color);
 
   @media screen and (min-width: 767.98px) {
     width: 180px;
@@ -106,6 +94,7 @@
 }
 
 .events__icon {
+  margin-right: 5px;
   width: 5px;
   height: 10px;
   fill: var(--text-color-descr);

@@ -5,7 +5,6 @@ import refs from './js/refs';
 import debounce from 'lodash.debounce';
 import searchByEventName from './js/searchEventsByName';
 import './js/up';
-import renderEventsList from './js/render-events.js';
 
 refs.input.addEventListener('input', debounce(searchByEventName, 500) );
 

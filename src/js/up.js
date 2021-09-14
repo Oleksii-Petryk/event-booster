@@ -1,18 +1,19 @@
-var goTopBtn = document.querySelector('.back_to_top');
+// const toUp = document.querySelector('.back_to_top');
+import refs from './refs';
 
 window.addEventListener('scroll', trackScroll);
-goTopBtn.addEventListener('click', toTop);
+refs.toUp.addEventListener('click', toTop);
 
 
 function trackScroll() {
-    var scrolled = window.pageYOffset;
-    var coords = document.documentElement.clientHeight;
+    const scrolled = window.pageYOffset;
+    const coords = document.documentElement.clientHeight;
 
     if (scrolled > coords) {
-      goTopBtn.classList.add('back_to_top-show'); //
+      refs.toUp.classList.add('back_to_top-show');
     }
     if (scrolled < coords) {
-      goTopBtn.classList.remove('back_to_top-show');
+      refs.toUp.classList.remove('back_to_top-show');
     }
   }
 

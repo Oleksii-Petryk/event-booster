@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /event-booster/",
-     "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
   },
   "repository": {
@@ -21,6 +21,9 @@
     "url": "https://github.com/goitacademy/parcel-project-template/issues"
   },
   "devDependencies": {
+    "@pnotify/core": "^5.2.0",
+    "@pnotify/desktop": "^5.2.0",
+    "@pnotify/mobile": "^5.2.0",
     "parcel-bundler": "^1.12.5",
     "parcel-plugin-handlebars-precompile": "^1.0.2",
     "parcel-plugin-nuke-dist": "^1.0.1",

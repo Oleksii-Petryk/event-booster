@@ -28,7 +28,7 @@
   height: 160px;
   border-radius: 50px 0px;
   overflow: hidden;
-  background-color: green;
+  background-color: var(--modal-font-color);
 
   @media screen and (min-width: 767.98px) {
     width: 180px;
@@ -94,6 +94,7 @@
 }
 
 .events__icon {
+  margin-right: 5px;
   width: 5px;
   height: 10px;
   fill: var(--text-color-descr);

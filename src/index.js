@@ -12,7 +12,7 @@ const discoveryApiService = new DiscoveryApiService();
 
 async function getEventsOnFirstLoad() {
     try {
-        const events = await discoveryApiService.featchEvents();
+        const events = await discoveryApiService.getEventsByInputValue();
         renderEventsList(events);
     } catch (error) {
         console.log(error);

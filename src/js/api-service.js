@@ -5,26 +5,18 @@ export default class DiscoveryApiService {
         this.keyWord = '';
 
     }
-    async featchEvents() {
-        try {
-            const responce = await fetch(`${this.BASE_URL}events.json?apikey=${this.API_KEY}`)
-            const events = await responce.json();
-            return events._embedded.events;
-        } catch (error) {
-            console.log(error);
-        }
-    }
 
     async getEventsByInputValue() {
               try {
             const responce = await fetch(`${this.BASE_URL}events.json?keyword=${this.keyWord}&apikey=${this.API_KEY}`)
-                  const events = await responce.json();
-                  if (!events._embedded) {
-                      console.log('erorr немає таких подій!!!')
-                      return;
-                  }
-            return events._embedded.events;
-        } catch (error) {
+                  const data = await responce.json();
+                //   if (!events._embedded) {
+                //       console.log('erorr немає таких подій!!!')
+                //       return;
+                //   }
+                  const events = data._embedded ? data._embedded.events : []
+            return events
+              } catch (error) {
             console.log(error);
         } 
     }

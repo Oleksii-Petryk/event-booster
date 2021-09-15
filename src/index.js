@@ -6,6 +6,8 @@ import debounce from 'lodash.debounce';
 import searchByEventName from './js/searchEventsByName';
 import './js/up';
 import './js/dropdown-menu.js';
+import './js/country-selection-logic';
+import './js/searchEventByCountryName';
 
 refs.input.addEventListener('input', debounce(searchByEventName, 500));
 

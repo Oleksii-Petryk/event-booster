@@ -60,15 +60,19 @@
     background-image: url('../images/bg/main/tablet-bg-body.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    margin-top: 29px;
+    padding-top: 29px;
   }
 
   @media screen and (min-width: 1280px) {
     background-image: url('../images/bg/main/desktop-bg-body.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    margin-top: 68px;
+    padding-top: 68px;
   }
+}
+
+.body__bg--error {
+  height: 100vh;
 }
 
 // .body__bg {

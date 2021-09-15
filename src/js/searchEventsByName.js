@@ -1,5 +1,5 @@
 import DiscoveryApiService from './api-service';
-import { renderEventsList, clearEventsList }from './render-events.js';
+import { renderEventsList, clearEventsList, catchError } from './render-events.js';
 
 
 const discoveryApiService = new DiscoveryApiService();
@@ -10,7 +10,10 @@ export default async function searchByEventName(e) {
         try {
             const events = await discoveryApiService.getEventsByInputValue();
             if (events.length === 0) {
-                console.log('Немає таких подій')
+                catchError();
+                e.target.value = "";
+                console.log('Немає таких подій');
+                return;
             }
             console.log(events);
             clearEventsList();

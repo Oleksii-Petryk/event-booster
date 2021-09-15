@@ -14,4 +14,5 @@ export function clearEventsList() {
 export function catchError() {
     const errorMarkup = errorTemplate();    
     refs.mainContent.innerHTML = errorMarkup;
+    refs.body.classList.add('body__bg--error');
 }

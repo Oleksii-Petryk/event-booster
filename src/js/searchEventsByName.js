@@ -11,7 +11,6 @@ export default async function searchByEventName(e) {
             const events = await discoveryApiService.getEventsByInputValue();
             if (events.length === 0) {
                 catchError();
-                e.target.value = "";
                 console.log('Немає таких подій');
                 return;
             }

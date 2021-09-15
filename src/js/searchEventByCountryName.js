@@ -11,7 +11,6 @@ export default async function searchEventByCountryName(countryNameCode) {
     if (events.length === 0) {
       console.log('Немає таких подій');
     }
-    console.log(events);
     clearEventsList();
     renderEventsList(events);
   } catch (error) {

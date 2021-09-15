@@ -4,6 +4,8 @@ import countryListTemplate from '../templates/countryListTemplate.hbs';
 import refs from './refs';
 import searchEventByCountryName from './searchEventByCountryName';
 
+export let code = '';
+
 const countryNames = Object.keys(countryDatabase);
 
 const countriesToSortAlphabetically = [...countryNames];
@@ -16,10 +18,15 @@ const countryListMarkup = sortedCountriesMarkup => {
   conteinerForMarkup.innerHTML = countryListTemplate(sortedCountriesMarkup);
 };
 
-const selectedCountryCode = conteinerForMarkup.addEventListener('click', e => {
-  let selectedCountry = e.target.lastElementChild.textContent;
+
+export const getCountryCode = (e) => {
+let selectedCountry = e.target.lastElementChild.textContent;
   let countryCode = countryDatabase[selectedCountry];
-  return searchEventByCountryName(countryCode);
-});
+  searchEventByCountryName(countryCode);
+  code = countryCode;
+  return countryCode;
+}
+
+const selectedCountryCode = conteinerForMarkup.addEventListener('click', getCountryCode);
 
 countryListMarkup(sortedCountries);

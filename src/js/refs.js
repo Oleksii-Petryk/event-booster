@@ -5,4 +5,5 @@ export default {
   selected: document.querySelector('.selected'),
   optionsContainer: document.querySelector('.options__container'),
   optionsList: document.querySelectorAll('.option'),
+  body: document.querySelector('.body__bg'),
 };

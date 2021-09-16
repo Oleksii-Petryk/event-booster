@@ -9,8 +9,11 @@ import './js/dropdown-menu.js';
 import './js/country-selection-logic';
 import './js/searchEventByCountryName';
 import './js/loader';
+import {onEventCardClick} from './js/modal.js';
 
 refs.input.addEventListener('input', debounce(searchByEventName, 500));
+
+
 
 const discoveryApiService = new DiscoveryApiService();
 
@@ -24,3 +27,6 @@ async function getEventsOnFirstLoad() {
 }
 
 getEventsOnFirstLoad();
+
+
+refs.eventsList.addEventListener('click', onEventCardClick);

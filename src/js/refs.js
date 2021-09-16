@@ -6,4 +6,5 @@ export default {
   optionsContainer: document.querySelector('.options__container'),
   optionsList: document.querySelectorAll('.option'),
   body: document.querySelector('.body__bg'),
+  pagination: document.querySelector('.tui-pagination')
 };

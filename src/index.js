@@ -7,6 +7,9 @@ import searchByEventName from './js/searchEventsByName';
 import './js/up';
 import './js/loader';
 
+
+
+
 refs.input.addEventListener('input', debounce(searchByEventName, 500) );
 
 const discoveryApiService = new DiscoveryApiService();
@@ -22,4 +25,3 @@ async function getEventsOnFirstLoad() {
 }
 
 getEventsOnFirstLoad();
-

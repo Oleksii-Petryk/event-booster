@@ -1,0 +1,243 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  opacity: 1;
+  overflow-y: scroll;
+
+  background-color: rgba(32, 13, 29, 0.6);
+  backdrop-filter: blur(3px);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  z-index: 101;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: block;
+  margin-top: 25px;
+  padding-top: 75px;
+  padding-bottom: 105px;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 270px;
+  text-align: center;
+  border-radius: 150px 0px;
+
+  background-color: #fff2fd;
+
+  @media screen and (min-width: 767.98px) {
+    margin-top: 160px;
+    padding-top: 30px;
+    padding-bottom: 55px;
+    padding-left: 50px;
+    padding-right: 20px;
+    width: 595px;
+    border-radius: 300px 0px;
+  }
+
+  @media screen and (min-width: 1279.98px) {
+    margin-top: 200px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 930px;
+  }
+}
+
+.modal__picture {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: 767.98px) {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: 1279.98px) {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+.modal__body {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+
+  @media screen and (min-width: 767.98px) {
+    margin-bottom: 45px;
+  }
+}
+
+.modal__cont:first-child {
+  @media screen and (min-width: 767.98px) {
+    width: 230px;
+  }
+
+  @media screen and (min-width: 1279.98px) {
+    width: 360px;
+  }
+}
+
+.modal__cont:last-child {
+  @media screen and (min-width: 767.98px) {
+    width: 265px;
+  }
+
+  @media screen and (min-width: 1279.98px) {
+    width: 450px;
+  }
+}
+
+.modal__image {
+  display: none;
+
+  @media screen and (min-width: 767.98px) {
+    display: block;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1279.98px) {
+    width: 100%;
+  }
+}
+
+.modal__item {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+
+  color: var(--modal-font-color);
+
+  @media screen and (min-width: 767.98px) {
+    text-align: left;
+  }
+
+  @media screen and (min-width: 1279.98px) {
+    font-size: 18px;
+    line-height: 1.22;
+  }
+}
+
+.modal__item:not(:last-child),
+.modal__text {
+  margin-bottom: 10px;
+
+  @media screen and (min-width: 1279.98px) {
+    margin-bottom: 20px;
+  }
+}
+
+.modal__title {
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: center;
+
+  color: #dc56c5;
+
+  @media screen and (min-width: 767.98px) {
+    text-align: left;
+  }
+
+  @media screen and (min-width: 1279.98px) {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+}
+
+.modal__price:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.modal__icon {
+  margin-right: 15px;
+  width: 25px;
+  height: 15px;
+
+  @media screen and (min-width: 1279.98px) {
+    width: 30px;
+    height: 20px;
+  }
+}
+
+.modal__button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  border-radius: 5px;
+}
+
+.modal__buy-button {
+  width: 145px;
+  height: 40px;
+  color: var(--text-color-descr);
+  background-color: var(--button-color);
+  border: none;
+}
+
+.modal__buy-button:hover,
+.modal__buy-button:focus {
+  background-color: #2e009a;
+}
+
+.modal__more-button {
+  width: 230px;
+  height: 40px;
+
+  color: var(--button-color);
+  border: 1px solid var(--button-color);
+
+  @media screen and (min-width: 767.98px) {
+    width: 255px;
+  }
+}
+
+.modal__more-button:hover,
+.modal__more-button:focus {
+  border: 1px solid #dc56c5;
+}
+
+.modal__close-button {
+  position: absolute;
+  z-index: 102;
+  top: 25px;
+  right: 25px;
+  background: transparent;
+  border: none;
+
+  @media screen and (min-width: 1279.98px) {
+    top: 30px;
+    right: 30px;
+  }
+}
+
+.modal__close-icon {
+  width: 15px;
+  height: 15px;
+  fill: var(--title-color);
+
+  @media screen and (min-width: 1279.98px) {
+    width: 25px;
+    height: 25px;
+  }
+}

@@ -1,24 +1,19 @@
-import refs from './refs';
+// import refs from './refs';
 
-window.addEventListener('scroll', trackScroll);
-refs.toUp.addEventListener('click', toTop);
+// refs.toUp.addEventListener('click', onClick);
+// function onClick() {
+//   window.scrollTo({
+//     top: 1,
+//     behavior: 'smooth',
+//   });
+// }
 
+// window.onscroll = function () {
+//   const scrolled = window.pageYOffset || refs.searchingBlock.scrollTop;
+//   if (scrolled > 400) {
+//     refs.toUp.style.display = 'block';
+//   } else {
+//     refs.toUp.style.display = 'none';
+//   }
+// };
 
-function trackScroll() {
-    const scrolled = window.pageYOffset;
-    const coords = document.documentElement.clientHeight;
-
-    if (scrolled > coords) {
-      refs.toUp.classList.add('back_to_top-show');
-    }
-    if (scrolled < coords) {
-      refs.toUp.classList.remove('back_to_top-show');
-    }
-  }
-
-  function toTop() {
-    if (window.pageYOffset > 0) {
-      window.scrollBy(0, -80);
-      setTimeout(toTop, 0);
-    }
-  }

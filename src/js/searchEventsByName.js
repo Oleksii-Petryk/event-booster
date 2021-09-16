@@ -1,7 +1,7 @@
 import DiscoveryApiService from './api-service';
 import { renderEventsList, clearEventsList }from './render-events.js';
-import { alertNotice } from './pnotifyAlert';
-import { errorNotice } from './pnotifyError';
+import { alertNotice, errorNotice } from './pnotify-module';
+
 
 const discoveryApiService = new DiscoveryApiService();
 

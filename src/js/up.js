@@ -1,4 +1,3 @@
-// const toUp = document.querySelector('.back_to_top');
 import refs from './refs';
 
 window.addEventListener('scroll', trackScroll);

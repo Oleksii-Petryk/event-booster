@@ -23,6 +23,7 @@ export const getCountryCode = (e) => {
 let selectedCountry = e.target.lastElementChild.textContent;
   let countryCode = countryDatabase[selectedCountry];
   searchEventByCountryName(countryCode);
+  refs.input.value = '';
   code = countryCode;
   return countryCode;
 }

@@ -7,6 +7,8 @@ export default {
   optionsContainer: document.querySelector('.options__container'),
   optionsList: document.querySelectorAll('.option'),
   body: document.querySelector('.body__bg'),
-      mask: document.querySelector('.mask'),
+  pagination: document.querySelector('.tui-pagination'),
+   mask: document.querySelector('.mask'),
+
 
 };

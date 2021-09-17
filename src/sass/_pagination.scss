@@ -33,7 +33,7 @@
   min-width: 30px;
   padding: 5px 0 5px;
   margin-left: 5px;
-  color: #fff;
+  color: var(--text-color-descr);
   font-size: 16px;
   font-weight: normal;
   line-height: 1;
@@ -48,15 +48,15 @@
 }
 
 .tui-pagination .tui-page-btn:hover {
-  border-color: #dc56c5;
-  color: #dc56c5;
+  border-color: var(--title-color);
+  color: var(--title-color);
 }
 
 .tui-pagination .tui-is-selected,
 .tui-pagination strong {
-  color: #dc56c5;
+  color: var(--title-color);
   background: transparent;
-  border-color: #dc56c5;
+  border-color: var(--title-color);
   cursor: default;
 }
 

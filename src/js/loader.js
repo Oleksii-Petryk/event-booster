@@ -1,8 +1,11 @@
-let mask = document.querySelector('.mask');
+import refs from './refs';
 
 window.addEventListener('load', () => {
-    mask.classList.add('hide');
+    refs.mask.classList.add('hide');
     setTimeout(() => { 
-        mask.remove();
+        refs.mask.remove();
     }, 600);
 });
+
+
+

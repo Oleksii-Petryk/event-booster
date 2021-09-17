@@ -73,6 +73,7 @@ body.show-modal .modal {
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
+  object-fit: cover;
 
   @media screen and (min-width: 767.98px) {
     width: 70px;
@@ -118,6 +119,7 @@ body.show-modal .modal {
 
 .modal__image {
   display: none;
+  object-fit: cover;
 
   @media screen and (min-width: 767.98px) {
     display: block;

@@ -1,9 +1,11 @@
 import DiscoveryApiService from './api-service';
 import { renderEventsList, clearEventsList, renderNotification } from './render-events.js';
+import { options, getPagination } from './pagination';
 
 const discoveryApiService = new DiscoveryApiService();
 
 export default async function searchEventByCountryName(countryNameCode) {
+  options.page = 1
   discoveryApiService.countryCode = countryNameCode;
 
   try {

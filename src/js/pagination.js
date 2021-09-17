@@ -1,5 +1,4 @@
 import Pagination from 'tui-pagination';
-import 'tui-pagination/dist/tui-pagination.css';
 import DiscoveryApiService from './api-service';
 import refs from './refs.js';
 import countryDatabase from './countryDatabase';
@@ -32,13 +31,10 @@ export const options = {
 };
 
 function countryCode() {
-    for (const key in countryDatabase) {
-        if (refs.selected.textContent === 'Choose country') {
-            return ''
-        } else (key === refs.selected.textContent);{
-            return `${countryDatabase[key]}`
-        }
-    }
+  if (refs.selected.textContent === 'Choose country') {
+    return ''
+  }
+  return countryDatabase[refs.selected.textContent]
 }
 
 
@@ -51,13 +47,16 @@ export function getPagination() {
 
     if (options.totalItems < 101 && options.totalItems > 20) {
         lastButton.classList.add('tui-hide')
-    } if (options.totalItems > 100) {
-        lastButton.classList.remove('tui-hide')
-    } if (options.totalItems < 21) {
-        refs.pagination.classList.add('tui-pagination__hide')
-    } if (options.totalItems > 20) {
-        refs.pagination.classList.remove('tui-pagination__hide')
     }
+    if (options.totalItems > 100) {
+          lastButton.classList.remove('tui-hide')
+    }
+    if (options.totalItems < 21) {
+          refs.pagination.classList.add('tui-pagination__hide')
+    }
+    if (options.totalItems > 20) {
+          refs.pagination.classList.remove('tui-pagination__hide')
+      }
 
 
     pagination.on('afterMove', async function (eventData) {
@@ -66,17 +65,19 @@ export function getPagination() {
         if (options.totalItems < 101 && currentPage > 1) {
             const firstButton = document.querySelector('.tui-first')
             firstButton.classList.add('tui-hide')
-        }
+      }
 
-        const discoveryApiService = new DiscoveryApiService();
-        discoveryApiService.page = currentPage - 1
-        discoveryApiService.keyWord = refs.input.value
-        discoveryApiService.countryCode = countryCode()
-        options.page = currentPage
-        const events = await discoveryApiService.getEventsByInputValue()
+      const discoveryApiService = new DiscoveryApiService();
+      discoveryApiService.page = currentPage - 1
 
-        clearEventsList();
-        renderEventsList(events);
+      discoveryApiService.keyWord = refs.input.value
+
+      discoveryApiService.countryCode = countryCode()
+
+      options.page = currentPage
+      const events = await discoveryApiService.getEventsByInputValue()
+      clearEventsList();
+      renderEventsList(events);
 
     })
 }

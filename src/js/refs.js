@@ -12,4 +12,5 @@ export default {
   eventsList: document.querySelector('.events'),
   mask: document.querySelector('.mask'),
   pagination: document.querySelector('.tui-pagination'),
+  footer: document.querySelector('.footer'),
 };

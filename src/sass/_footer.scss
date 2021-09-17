@@ -1,62 +1,62 @@
 .footer {
-    color: var(--font-color);
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 1.21;
-    text-align: center;
-    padding: 60px 0 27px 0;
+  color: var(--font-color);
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.21;
+  text-align: center;
+  padding: 60px 0 27px 0;
 
-    @media screen and (min-width: 768px) {
-        padding: 60px 0 20px 0;
-        font-size: 16px;
-        line-height: 1.25;
-    }
-    @media screen and (min-width: 1280px) {
-        padding: 80px 0 20px 0;
-        font-weight: 400;
-    }
-    };
+  @media screen and (min-width: 768px) {
+    padding: 60px 0 20px 0;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 80px 0 20px 0;
+    font-weight: 400;
+  }
+}
 
 .footer-link {
-    color: var(--font-color);
+  color: var(--font-color);
 
-    &:hover,
-    &:focus {
-      color: red;
-    }
+  &:hover,
+  &:focus {
+    color: red;
+  }
 }
 
 .footer-heart {
-    color: red;
-    font-size: 26px;
-    animation: heartbeat 1s infinite;
-    display: inline-block;
-    }
+  color: red;
+  font-size: 26px;
+  animation: heartbeat 1s infinite;
+  display: inline-block;
+}
 
-    @keyframes heartbeat
-    {
-      0%
-      {
-        transform: scale( .75 );
-      }
-      20%
-      {
-        transform: scale( 1 );
-      }
-      40%
-      {
-        transform: scale( .75 );
-      }
-      60%
-      {
-        transform: scale( 1 );
-      }
-      80%
-      { 
-        transform: scale( .75 );
-      }
-      100%
-      {
-        transform: scale( .75 );
-      }
-    }
+@keyframes heartbeat {
+  0% {
+    transform: scale(0.75);
+  }
+  20% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(0.75);
+  }
+  60% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(0.75);
+  }
+}
+
+.footer--error {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}

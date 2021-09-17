@@ -1,6 +1,8 @@
 import refs from './refs';
 import modalTemplate from '../templates/modal-template.hbs';
+
     export function renderModal() {
+
         const modalOpener = modalTemplate();
         refs.backdrop.insertAdjacentHTML('beforeend', modalOpener);
     }

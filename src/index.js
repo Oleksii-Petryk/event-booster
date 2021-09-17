@@ -1,6 +1,6 @@
 import './sass/main.scss';
 import DiscoveryApiService from './js/api-service';
-import { renderEventsList, clearEventsList } from './js/render-events.js';
+import { renderEventsList, clearEventsList, catchError } from './js/render-events.js';
 import refs from './js/refs';
 import debounce from 'lodash.debounce';
 import searchByEventName from './js/searchEventsByName';
@@ -15,6 +15,7 @@ import { onEventCardClick, renderModal} from './js/modal.js';
 renderModal();
 refs.input.addEventListener('input', debounce(searchByEventName, 500));
 refs.mainContent.addEventListener('click', onEventCardClick);
+
 
 
 

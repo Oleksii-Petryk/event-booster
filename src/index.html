@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EVENT BOOSTER</title>
+    <link href="../node_modules/@pnotify/core/dist/PNotify.css" rel="stylesheet" type="text/css" />
+    <link href="../node_modules/@pnotify/core/dist/BrightTheme.css" rel="stylesheet" type="text/css" />
   </head>
   <body class="body__bg">
     <header class="header header__bg" id="header">
@@ -15,7 +17,7 @@
               <input
                 type="text"
                 autocomplete="off"
-                class="search-form__input search-form__input-js"
+                class="search-form__input search-form__field search-form__input-js"
                 name="event_name"
                 placeholder="Start searching"
               />
@@ -26,13 +28,20 @@
             <div class="dropdown-menu">
               <div class="options__container"></div>
 
-              <div class="selected">Choose country</div>
+              <div class="selected search-form__field">Choose country</div>
             </div>
           </form>
         </div>
       </div>
     </header>
     <div class="main__bg">
+      <div class="mask">
+        <div class="loader">
+        <div class="circle circle-first"></div>
+        <div class="circle circle-second"></div>
+        <div class="circle circle-third"></div>
+      </div>
+    </div>
       <main>
         <div id="main-content" class="container main-content"></div>
         <div class="mask">
@@ -42,6 +51,7 @@
           <div class="circle c3"></div>
           </div>
         </div>
+
       </main>
       <div id="pagination" class="tui-pagination"></div>
       <footer class="footer">

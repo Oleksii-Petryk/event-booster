@@ -10,6 +10,7 @@ import './js/country-selection-logic';
 import './js/searchEventByCountryName';
 import './js/loader';
 
+
 refs.input.addEventListener('input', debounce(searchByEventName, 500));
 
 const discoveryApiService = new DiscoveryApiService();

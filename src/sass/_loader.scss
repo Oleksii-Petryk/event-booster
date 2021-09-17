@@ -1,7 +1,6 @@
 .mask {
     width: 100%;
     height: 100%;
-    // background: rgba(138, 47, 108, 0.4);
     background: black;
     position: fixed;
     top: 0;
@@ -10,7 +9,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    background-image: url(../images/loader/logo-fon.png);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .hide {
@@ -19,10 +20,20 @@
 
 .loader {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 120px;
+    height: 120px;
     perspective: 800px;
-    filter: blur(2px);
+    filter: blur(1px);
+
+    @media screen and (min-width: 768px) {
+        width: 150px;
+        height: 150px;
+    }
+    @media screen and (min-width: 1280px) {
+        width: 200px;
+        height: 200px;
+        filter: blur(2px);
+    }
 }
 
 .circle {
@@ -35,17 +46,17 @@
     border-right: none;
 }
 
-.c1 {
-    animation: c1 1.5s -1s linear infinite;
+.circle-first {
+    animation: circle-first 1.5s -1s linear infinite;
 }
-.c2 {
-    animation: c2 1.5s -0.5s linear infinite;
+.circle-second {
+    animation: circle-second 1.5s -0.5s linear infinite;
 }
-.c3 {
-    animation: c3 1.5s linear infinite;
+.circle-third {
+    animation: circle-third 1.5s linear infinite;
 }
 
-@keyframes c1 {
+@keyframes circle-first {
     0% {
         transform: rotateX(45deg) rotateY(45deg) rotateZ(0);
     }
@@ -54,7 +65,7 @@
     }
 }
 
-@keyframes c2 {
+@keyframes circle-second {
     0% {
         transform: rotateX(60deg) rotateY(0) rotateZ(0);
     }
@@ -63,7 +74,7 @@
     }
 }
 
-@keyframes c3 {
+@keyframes circle-third {
     0% {
         transform: rotateX(-45deg) rotateY(45deg) rotateZ(0);
     }

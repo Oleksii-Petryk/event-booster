@@ -1,4 +1,5 @@
 export default {
+
   mainContent: document.querySelector('.main-content'),
   input: document.querySelector('.search-form__input-js'),
   toUp: document.querySelector('.back_to_top'),
@@ -7,4 +8,7 @@ export default {
   optionsList: document.querySelectorAll('.option'),
   body: document.querySelector('.body__bg'),
   pagination: document.querySelector('.tui-pagination'),
+   mask: document.querySelector('.mask'),
+
+
 };

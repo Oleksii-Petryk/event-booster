@@ -89,10 +89,6 @@
   background: rgba(255, 255, 255, 0.2);
   //backdrop-filter: blur(20px);
   z-index: 101;
-  font-size: 16px;
-  line-height: 1.25;
-  text-align: left;
-  color: #cccccc;
 }
 .dropdown-menu .options__container.active + .selected {
   border-radius: 20px 20px 0 0;
@@ -132,12 +128,17 @@
 }
 .dropdown-menu .option {
   padding-left: 30px;
-  // font-size: 16px;
-  // line-height: 1.25;
-  // text-align: left;
-  // color: #cccccc;
+  font-size: 16px;
+  line-height: 1.25;
+  text-align: left;
+  color: #cccccc;
   cursor: pointer;
 }
+
+.dropdown-menu .option:not(:last-child) {
+  margin-bottom: 2px;
+}
+
 .dropdown-menu .option:hover {
   background: #dc56c5;
   color: #ffffff;

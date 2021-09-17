@@ -1,23 +1,28 @@
 import refs from './refs';
 import modalTemplate from '../templates/modal-template.hbs';
-
-// refs.selected.addEventListener('click', onOpenModal)
-
-//     function onOpenModal() {
-//         document.body.classList.add('show-modal');
-//     }
-
-    function renderModal() {
+    export function renderModal() {
         const modalOpener = modalTemplate();
-        refs.mainContent.insertAdjacentHTML('beforeend', modalOpener);
+        refs.backdrop.insertAdjacentHTML('beforeend', modalOpener);
     }
 
     export function onEventCardClick(evt) {
       evt.preventDefault();
-      console.dir(evt.target);
-        if (!evt.target.classList.contains('events__item')) {
+        if (!evt.target.closest('li').classList.contains('events__item')) {
           return
         };
-        renderModal();
-        // refs.backdrop.classList.remove("is-hidden");
-    }
+      refs.backdrop.classList.remove("is-hidden");
+      const closeButton = document.querySelector('.modal__close-button');
+      closeButton.addEventListener('click', closeModal);
+      refs.backdrop.addEventListener('click', onBackDropClick);
+}
+    
+function closeModal(e) {
+  refs.backdrop.classList.add("is-hidden");
+}
+
+function onBackDropClick(e) {
+  if (e.target === e.currentTarget) {
+    refs.backdrop.classList.add("is-hidden");
+    refs.backdrop.removeEventListener('click', onBackDropClick);
+  }
+}

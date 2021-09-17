@@ -9,8 +9,10 @@ import './js/dropdown-menu.js';
 import './js/country-selection-logic';
 import './js/searchEventByCountryName';
 import './js/loader';
-import { onEventCardClick} from './js/modal.js';
+import { onEventCardClick, renderModal} from './js/modal.js';
 
+
+renderModal();
 refs.input.addEventListener('input', debounce(searchByEventName, 500));
 refs.mainContent.addEventListener('click', onEventCardClick);
 
@@ -28,5 +30,6 @@ async function getEventsOnFirstLoad() {
 }
 
 getEventsOnFirstLoad();
+
 
 

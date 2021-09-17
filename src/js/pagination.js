@@ -47,13 +47,16 @@ export function getPagination() {
 
     if (options.totalItems < 101 && options.totalItems > 20) {
         lastButton.classList.add('tui-hide')
-    } if (options.totalItems > 100) {
-        lastButton.classList.remove('tui-hide')
-    } if (options.totalItems < 21) {
-        refs.pagination.classList.add('tui-pagination__hide')
-    } if (options.totalItems > 20) {
-        refs.pagination.classList.remove('tui-pagination__hide')
     }
+    if (options.totalItems > 100) {
+          lastButton.classList.remove('tui-hide')
+    }
+    if (options.totalItems < 21) {
+          refs.pagination.classList.add('tui-pagination__hide')
+    }
+    if (options.totalItems > 20) {
+          refs.pagination.classList.remove('tui-pagination__hide')
+      }
 
 
     pagination.on('afterMove', async function (eventData) {

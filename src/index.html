@@ -1,64 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EVENT BOOSTER</title>
-    <link href="../node_modules/@pnotify/core/dist/PNotify.css" rel="stylesheet" type="text/css" />
-    <link href="../node_modules/@pnotify/core/dist/BrightTheme.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body class="body__bg">
-    <header class="header header__bg" id="header">
-      <div class="container">
-        <h1 class="main__title">FIND BEST EVENTS AROUND THE WORLD</h1>
-        <div class="search__box">
-          <form class="search-form">
-            <div class="input__box">
-              <input
-                type="text"
-                autocomplete="off"
-                class="search-form__input search-form__field search-form__input-js"
-                name="event_name"
-                placeholder="Start searching"
-              />
-              <svg class="search-form__icon" width="12px" height="12px">
-                <use href="./images/sprite.svg#icon-search"></use>
-              </svg>
-            </div>
-            <div class="dropdown-menu">
-              <div class="options__container"></div>
 
-              <div class="selected search-form__field">Choose country</div>
-            </div>
-          </form>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EVENT BOOSTER</title>
+  <link href="../node_modules/@pnotify/core/dist/PNotify.css" rel="stylesheet" type="text/css" />
+  <link href="../node_modules/@pnotify/core/dist/BrightTheme.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="body__bg">
+  <header class="header header__bg" id="header">
+    <div class="container">
+      <h1 class="main__title">FIND BEST EVENTS AROUND THE WORLD</h1>
+      <div class="search__box">
+        <form class="search-form">
+          <div class="input__box">
+            <input type="text" autocomplete="off" class="search-form__input search-form__field search-form__input-js"
+              name="event_name" placeholder="Start searching" />
+            <svg class="search-form__icon" width="12px" height="12px">
+              <use href="./images/sprite.svg#icon-search"></use>
+            </svg>
+          </div>
+          <div class="dropdown-menu">
+            <div class="options__container"></div>
+            <div class="selected search-form__field">Choose country</div>
+          </div>
+        </form>
       </div>
-    </header>
-    <div class="main__bg">
-      <div class="mask">
-        <div class="loader">
+    </div>
+  </header>
+  <div class="main__bg">
+  <main>
+    <div id="main-content" class="container main-content"></div>
+    <div class="mask">
+      <div class="loader">
         <div class="circle circle-first"></div>
         <div class="circle circle-second"></div>
         <div class="circle circle-third"></div>
       </div>
     </div>
-      <main>
-        <div id="main-content" class="container main-content"></div>
-        <div class="mask">
-          <div class="loader">
-          <div class="circle c1"></div>
-          <div class="circle c2"></div>
-          <div class="circle c3"></div>
-          </div>
-        </div>
+  </main>
+  <div id="pagination" class="tui-pagination"></div>
+  <footer class="footer">
+    <div class="container">© 2021 | All Rights Reserved | Developed with <span class="footer-heart">♥</span> by <a
+        href="https://docs.google.com/spreadsheets/d/1--429pJyZrs2YdDcTi2mKc6SfbBUqCX6nC-8sNqhrt8/edit#gid=1678011658"
+        class="footer-link link" target="_blank" rel="noopener noreferrer">GoIT Students</a></div>
+  </footer>
+  <a class="back_to_top" title="Up">↑</a>
+  </div>
+  <script src="./index.js"></script>
+</body>
 
-      </main>
-      <div id="pagination" class="tui-pagination"></div>
-      <footer class="footer">
-        <div class="container">© 2021 | All Rights Reserved | Developed with <span class="footer-heart">♥</span> by <a href="https://docs.google.com/spreadsheets/d/1--429pJyZrs2YdDcTi2mKc6SfbBUqCX6nC-8sNqhrt8/edit#gid=1678011658" class="footer-link link" target="_blank" rel="noopener noreferrer">GoIT Students</a></div>
-      </footer>
-      <a class="back_to_top" title="Up">↑</a>
-    </div>
-    <script src="./index.js"></script>
-  </body>
 </html>

@@ -1,3 +1,13 @@
+body.show-modal .backdrop {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+
+body.show-modal .modal {
+  transform: scale(1);
+}
+
 .backdrop {
   position: fixed;
   top: 0;

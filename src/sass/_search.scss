@@ -61,10 +61,15 @@
 
 .search-form__icon {
   position: absolute;
-  top: 50%;
-  right: 60px;
+  top: 35%;
+  right: 35px;
   transform: translateY(-50%);
   fill: var(--font-color);
+
+  @media screen and (min-width: 768px) {
+    top: 50%;
+    right: 60px;
+  }
 }
 
 .selected {

@@ -9,5 +9,6 @@ export default {
   modal: document.querySelector('.modal'),
   backdrop: document.querySelector('.backdrop'),
   closeModalBtn: document.querySelector('[data-action="data-modal-close"]'),
-  eventsList: document.querySelector('.events')
+  eventsList: document.querySelector('.events'),
+  eventCard: document.querySelector('.events__item'),
 };

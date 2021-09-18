@@ -12,6 +12,13 @@
   margin-bottom: 40px;
   display: block;
   text-align: center;
+  transition: transform ease-in-out 1s;
+
+  &:hover, 
+  &:focus {
+    cursor: pointer;
+    transform: scale(1.07, 1.05);
+   }
 
   @media screen and (min-width: 767.98px) {
     margin-bottom: 60px;

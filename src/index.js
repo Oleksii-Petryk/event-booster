@@ -10,6 +10,7 @@ import './js/searchEventByCountryName';
 import './js/loader';
 import { onEventCardClick, renderModal} from './js/modal.js';
 import './js/up';
+import './js/render-modal.js';
 
 
 renderModal();
@@ -19,6 +20,7 @@ refs.mainContent.addEventListener('click', onEventCardClick);
 
 
 const discoveryApiService = new DiscoveryApiService();
+
 async function getEventsOnFirstLoad() {
   try {
     const events = await discoveryApiService.getEventsByInputValue();

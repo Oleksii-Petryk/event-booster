@@ -1,14 +1,17 @@
 import refs from './refs';
 import modalTemplate from '../templates/modal-template.hbs';
+import { identity } from 'lodash';
 
-    export function renderModal() {
+let clickedEvent = '';
 
-        const modalOpener = modalTemplate();
+export function renderModal(evt) {
+        const modalOpener = modalTemplate(evt);
         refs.backdrop.insertAdjacentHTML('beforeend', modalOpener);
     }
 
     export function onEventCardClick(evt) {
       evt.preventDefault();
+      
         if (!evt.target.closest('li').classList.contains('events__item')) {
           return
         };
@@ -16,6 +19,8 @@ import modalTemplate from '../templates/modal-template.hbs';
       const closeButton = document.querySelector('.modal__close-button');
       closeButton.addEventListener('click', closeModal);
       refs.backdrop.addEventListener('click', onBackDropClick);
+      clickedEvent = evt.target.parentElement.dataset;
+      console.log(clickedEvent);
 }
     
 function closeModal(e) {

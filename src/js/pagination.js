@@ -17,7 +17,7 @@ export const options = {
     currentPage:
       '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
     moveButton:
-      '<a href="#main-content" class="tui-page-btn tui-{{type}}">1 ...</a>',
+      '<a href="#main-content" class="tui-page-btn tui-{{type}} tui-hide">1 ...</a>',
     disabledMoveButton:
       '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
       '<span class="tui-ico-{{type}}">{{type}}</span>' +
@@ -39,45 +39,53 @@ function countryCode() {
   return countryDatabase[refs.selected.textContent];
 }
 
+let pagePagination = 1
+
 export function getPagination() {
-  const pagination = new Pagination('pagination', options);
-  const lastButton = document.querySelector('.tui-last');
-
-  lastButton.textContent =
-    '... ' + `${Math.ceil(options.totalItems / options.itemsPerPage)}`;
-  lastButton.style.padding = '5px 10px';
-
-  if (options.totalItems < 101 && options.totalItems > 20) {
-    lastButton.classList.add('tui-hide');
-  }
-  if (options.totalItems > 100) {
-    lastButton.classList.remove('tui-hide');
-  }
-  if (options.totalItems < 21) {
-    refs.pagination.classList.add('tui-pagination__hide');
-  }
-  if (options.totalItems > 20) {
-    refs.pagination.classList.remove('tui-pagination__hide');
-  }
-
-  pagination.on('afterMove', async function (eventData) {
-    const currentPage = eventData.page;
-
-    if (options.totalItems < 101 && currentPage > 1) {
-      const firstButton = document.querySelector('.tui-first');
-      firstButton.classList.add('tui-hide');
+    const pagination = new Pagination('pagination', options);
+    const lastButton = document.querySelector('.tui-last')
+    
+    if (options.totalItems < 21) {
+          refs.pagination.classList.add('tui-pagination__hide')
+    } else {
+      refs.pagination.classList.remove('tui-pagination__hide')
     }
 
+    let totalPage = options.totalItems / options.itemsPerPage
+    let firstButton = document.querySelector('.tui-first')
+
+    lastButton.textContent = '... ' + `${Math.ceil(totalPage)}`
+
+    if (options.totalItems > 100 && pagePagination < totalPage - 2) {
+          lastButton.classList.remove('tui-hide')
+    }
+  
+    if (options.totalItems > 100 && pagePagination > 3) {
+          firstButton.classList.remove('tui-hide')
+    }
+  
+  pagination.on('afterMove', async function (eventData) {
+    const currentPage = eventData.page;
+    pagePagination = currentPage
+
     const discoveryApiService = new DiscoveryApiService();
-    discoveryApiService.page = currentPage - 1;
+    discoveryApiService.page = currentPage - 1
 
-    discoveryApiService.keyWord = refs.input.value;
+    discoveryApiService.keyWord = refs.input.value
 
-    discoveryApiService.countryCode = countryCode();
+    discoveryApiService.countryCode = countryCode()
 
-    options.page = currentPage;
-    const events = await discoveryApiService.getEventsByInputValue();
+    options.page = currentPage
+    const events = await discoveryApiService.getEventsByInputValue()
+
+    refs.mainContent.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+    
     clearEventsList();
     renderEventsList(events);
-  });
+    
+  })
 }
+

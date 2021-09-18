@@ -10,8 +10,16 @@
   margin-left: var(--grid-margin-in);
   margin-top: var(--grid-margin-in);
   margin-bottom: 40px;
+  scale: 1;
   display: block;
   text-align: center;
+  transition: transform 1000ms ease-in-out 250ms;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    transform: scale(1.1, 1.15);
+  }
 
   @media screen and (min-width: 767.98px) {
     margin-bottom: 60px;

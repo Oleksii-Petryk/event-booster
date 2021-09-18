@@ -165,7 +165,7 @@ body.show-modal .modal {
   line-height: 1.2;
   text-align: center;
 
-  color: #dc56c5;
+  color: var(--title-color);
 
   @media screen and (min-width: 767.98px) {
     text-align: left;
@@ -209,7 +209,7 @@ body.show-modal .modal {
 
 .modal__buy-button:hover,
 .modal__buy-button:focus {
-  background-color: #2e009a;
+  background-color: var(--button-color);
 }
 
 .modal__more-button {
@@ -226,7 +226,7 @@ body.show-modal .modal {
 
 .modal__more-button:hover,
 .modal__more-button:focus {
-  border: 1px solid #dc56c5;
+  border: 1px solid var(--title-color);
 }
 
 .modal__close-button {
@@ -236,6 +236,10 @@ body.show-modal .modal {
   right: 25px;
   background: transparent;
   border: none;
+
+  &:hover,
+  &:focus {
+  }
 
   @media screen and (min-width: 1279.98px) {
     top: 30px;
@@ -247,6 +251,13 @@ body.show-modal .modal {
   width: 15px;
   height: 15px;
   fill: var(--title-color);
+  transition: rotate 500ms cubic-bezier(0.075, 0.82, 0.165, 1) 250ms;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    transform: rotate(180deg);
+  }
 
   @media screen and (min-width: 1279.98px) {
     width: 25px;

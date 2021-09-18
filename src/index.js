@@ -9,6 +9,7 @@ import './js/country-selection-logic';
 import './js/searchEventByCountryName';
 import './js/loader';
 import { onEventCardClick, renderModal} from './js/modal.js';
+import './js/up';
 
 
 renderModal();

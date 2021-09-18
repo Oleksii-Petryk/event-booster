@@ -40,7 +40,6 @@ body.show-modal .modal {
   transform: translate(-50%, -50%) scale(1);
   transition: transform ease-in-out 600ms;
 
-
   display: block;
   margin-top: 25px;
   padding-top: 75px;
@@ -52,7 +51,6 @@ body.show-modal .modal {
   border-radius: 150px 0px;
 
   background-color: #fff2fd;
-
 
   @media screen and (min-width: 767.98px) {
     margin-top: 160px;

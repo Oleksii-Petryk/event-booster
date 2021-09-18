@@ -3,8 +3,6 @@ import modalTemplate from '../templates/modal-template.hbs';
 import { identity } from 'lodash';
 import { getClicedCardObj } from './render-modal';
 
-
-
 export function renderModal(evt) {
         const modalOpener = modalTemplate(evt);
         refs.backdrop.insertAdjacentHTML('beforeend', modalOpener);

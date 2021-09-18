@@ -1,43 +1,42 @@
 
   <div class='modal js-modal'>
-    <img class='modal__picture' src='' alt='' />
+    <img class='modal__picture' src='{{images.3.url}}' alt='{{name}}' />
 
     <div class='modal__body'>
       <div class='modal__cont'>
-        <img class='modal__image' src='' alt='' />
+        <img class='modal__image' src='{{images.6.url}}' alt='{{name}}' />
       </div>
       <div class='modal__cont'>
         <ul class='list'>
           <li class='modal__item'>
-            <h3 class='modal__title'>{{name}}</h3>
+            <h3 class='modal__title'>info</h3>
             <p>
-              Atlas Weekend is the largest music festival in Ukraine. More than 200 artists will
-              create a proper music festival atmosphere on 10 stages
+              {{info}}
             </p>
           </li>
 
           <li class='modal__item'>
             <h3 class='modal__title'>when</h3>
             <p>
-              2021-06-09
+              {{dates.start.localDate}}
               <br />
-              20:00 (Kyiv/Ukraine)
+              {{dates.start.localTime}} ({{dates.timezone}})
             </p>
           </li>
 
           <li class='modal__item'>
             <h3 class='modal__title'>where</h3>
             <p>
-              Kyiv, Ukraine
+              {{_embedded.venues.0.city.name}}, {{_embedded.venues.0.country.name}}
               <br />
-              VDNH
+              {{_embedded.venues.0.name}}
             </p>
           </li>
 
           <li class='modal__item'>
             <h3 class='modal__title'>who</h3>
             <p>
-              The Black Eyed Peas
+              {{name}}
             </p>
           </li>
 
@@ -52,7 +51,7 @@
                       d='M4.91 1.269h-4.91v29.461h4.91v-29.461zM17.26 1.269h-4.911v29.461h4.911v-29.461zM24.699 1.269h-4.91v29.461h4.91v-29.461zM44.19 1.269h-7.291v29.461h7.291v-29.461zM9.819 1.269h-2.38v29.461h2.38v-29.461zM29.46 1.269h-2.38v29.461h2.38v-29.461zM34.37 1.269h-2.38v29.461h2.382v-29.461z'
                     ></path>
                   </svg>
-                  Standart 300-500 UAH
+                  {{priceRanges.0.type}} {{priceRanges.0.min}}-{{priceRanges.0.max}} {{priceRanges.0.currency}}
                 </p>
                 <button class='modal__button modal__buy-button' type='button' data-modal-open>BUY
                   TICKETS</button>
@@ -66,7 +65,7 @@
                     >
                     </path>
                   </svg>
-                  VIP 1000-1500 UAH
+                  {{priceRanges.1.type}} {{priceRanges.1.min}}-{{priceRanges.1.max}} {{priceRanges.1.currency}}
                 </p>
                 <button class='modal__button modal__buy-button' type='button' data-modal-open>BUY
                   TICKETS</button>

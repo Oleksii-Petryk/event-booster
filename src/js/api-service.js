@@ -7,7 +7,6 @@ export default class DiscoveryApiService {
     this.keyWord = '';
     this.countryCode = '';
     this.page = 0;
-
   }
 
   async getEventsByInputValue() {
@@ -24,6 +23,4 @@ export default class DiscoveryApiService {
       console.log(error);
     }
   }
-
-
 }

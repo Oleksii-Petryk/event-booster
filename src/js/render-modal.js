@@ -13,16 +13,6 @@ export function getClicedCardObj(eventId) {
 }
 
 export function getEventsArray(arr) {
-
     events = arr;
     console.log(events);
 }
-
-
-
-
-
-
-// function getCardId() {
-//   console.log(evt.target.parentElement.dataset);
-// }

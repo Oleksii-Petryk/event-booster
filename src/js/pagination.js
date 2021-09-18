@@ -2,9 +2,7 @@ import Pagination from 'tui-pagination';
 import DiscoveryApiService from './api-service';
 import refs from './refs.js';
 import countryDatabase from './countryDatabase';
-import { clearEventsList, renderEventsList } from './render-events'
-
-
+import { clearEventsList, renderEventsList } from './render-events';
 
 export const options = {
   totalItems: 1000,
@@ -16,25 +14,29 @@ export const options = {
   lastItemClassName: 'tui-last-child',
   template: {
     page: '<a href="#main-content" class="tui-page-btn">{{page}}</a>',
-    currentPage: '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
+    currentPage:
+      '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
     moveButton:
       '<a href="#main-content" class="tui-page-btn tui-{{type}} tui-hide">1 ...</a>',
     disabledMoveButton:
       '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
-        '<span class="tui-ico-{{type}}">{{type}}</span>' +
+      '<span class="tui-ico-{{type}}">{{type}}</span>' +
       '</span>',
     moreButton:
       '<a href="#main-content" class="tui-page-btn tui-{{type}}-is-ellip">' +
-        '<span class="tui-ico-ellip">...</span>' +
-      '</a>'
-  }
+      '<span class="tui-ico-ellip">...</span>' +
+      '</a>',
+  },
 };
 
 function countryCode() {
   if (refs.selected.textContent === 'Choose country') {
-    return ''
+    return '';
   }
-  return countryDatabase[refs.selected.textContent]
+  if (refs.selected.textContent === 'All countries') {
+    return '';
+  }
+  return countryDatabase[refs.selected.textContent];
 }
 
 let pagePagination = 1

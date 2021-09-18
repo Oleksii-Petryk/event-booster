@@ -53,27 +53,23 @@
 .main__bg {
   margin-right: auto;
   margin-left: auto;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 
   @media screen and (max-width: 767.98px) {
     max-width: 320px;
     background-image: url('../images/bg/main/mobile-bg-body.png');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
   }
 
   @media screen and (min-width: 768px) {
     max-width: 768px;
     background-image: url('../images/bg/main/tablet-bg-body.png');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
     padding-top: 29px;
   }
 
   @media screen and (min-width: 1280px) {
     max-width: 1280px;
     background-image: url('../images/bg/main/desktop-bg-body.png');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
     padding-top: 68px;
   }
 }
@@ -82,25 +78,6 @@
   background-color: var(--modal-font-color);
 }
 
-
 .body__bg--error {
   height: 100vh;
 }
-
-
-// .body__bg {
-//   margin-right: auto;
-//   margin-left: auto;
-
-//   @media screen and (min-width: 768px) and (max-width: 1279.98px) {
-//     background-image: url('../images/bg-lines/tablet-bg-decor.png');
-//     background-repeat: no-repeat;
-//     background-size: 100% 2946px;
-//   }
-
-//   @media screen and (min-width: 1280px) {
-//     background-image: url('../images/bg-lines/desktop-bg-decor.png');
-//     background-repeat: no-repeat;
-//     background-size: 100% 2376px;
-//   }
-// }

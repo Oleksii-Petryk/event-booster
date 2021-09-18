@@ -44,7 +44,13 @@
 }
 
 .tui-pagination .tui-hide {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tui-pagination .tui-last,
+.tui-pagination .tui-first {
+  padding: 5px 10px;
 }
 
 .tui-pagination .tui-page-btn:hover {

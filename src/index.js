@@ -29,7 +29,3 @@ async function getEventsOnFirstLoad() {
 
 
 getEventsOnFirstLoad();
-
-
-
-

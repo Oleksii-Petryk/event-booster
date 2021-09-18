@@ -61,22 +61,29 @@ export function getPagination() {
     if (options.totalItems > 100 && pagePagination > 3) {
           firstButton.classList.remove('tui-hide')
     }
+  
+  pagination.on('afterMove', async function (eventData) {
+    const currentPage = eventData.page;
+    pagePagination = currentPage
 
-    pagination.on('afterMove', async function (eventData) {
-      const currentPage = eventData.page;
-      pagePagination = currentPage
+    const discoveryApiService = new DiscoveryApiService();
+    discoveryApiService.page = currentPage - 1
 
-      const discoveryApiService = new DiscoveryApiService();
-      discoveryApiService.page = currentPage - 1
+    discoveryApiService.keyWord = refs.input.value
 
-      discoveryApiService.keyWord = refs.input.value
+    discoveryApiService.countryCode = countryCode()
 
-      discoveryApiService.countryCode = countryCode()
+    options.page = currentPage
+    const events = await discoveryApiService.getEventsByInputValue()
 
-      options.page = currentPage
-      const events = await discoveryApiService.getEventsByInputValue()
-      clearEventsList();
-      renderEventsList(events);
-
+    refs.mainContent.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
     })
+    
+    clearEventsList();
+    renderEventsList(events);
+    
+  })
 }
+

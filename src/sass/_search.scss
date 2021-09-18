@@ -23,7 +23,7 @@
   height: 40px;
   padding-left: 30px;
   background: rgba(255, 255, 255, 0.2);
-  //backdrop-filter: blur(20px);
+  // backdrop-filter: blur(20px);
   border: none;
   font-family: Montserrat;
   font-style: normal;
@@ -32,6 +32,7 @@
   color: var(--font-color);
   border-radius: 20px;
 }
+
 .search-form__input {
   margin-bottom: 25px;
   @media screen and (min-width: 768px) {
@@ -129,7 +130,7 @@
 .dropdown-menu .option {
   padding-left: 30px;
   font-size: 16px;
-  line-height: 1.25;
+  line-height: 1.8;
   text-align: left;
   color: #cccccc;
   cursor: pointer;

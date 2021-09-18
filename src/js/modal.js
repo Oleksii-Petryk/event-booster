@@ -1,8 +1,9 @@
 import refs from './refs';
 import modalTemplate from '../templates/modal-template.hbs';
 import { identity } from 'lodash';
+import { getClicedCardObj } from './render-modal';
 
-let clickedEvent = '';
+
 
 export function renderModal(evt) {
         const modalOpener = modalTemplate(evt);
@@ -17,10 +18,10 @@ export function renderModal(evt) {
         };
       refs.backdrop.classList.remove("is-hidden");
       const closeButton = document.querySelector('.modal__close-button');
-      closeButton.addEventListener('click', closeModal);
+      // closeButton.addEventListener('click', closeModal);
       refs.backdrop.addEventListener('click', onBackDropClick);
-      clickedEvent = evt.target.parentElement.dataset;
-      console.log(clickedEvent);
+     let clickedEventId = evt.target.parentElement.dataset.id;
+      getClicedCardObj(clickedEventId);
 }
     
 function closeModal(e) {

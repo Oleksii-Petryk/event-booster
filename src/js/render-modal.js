@@ -1,18 +1,22 @@
 import DiscoveryApiService from './api-service';
 import refs from './refs';
+import { renderModal } from './modal.js';
 
-
-const discoveryApiService = new DiscoveryApiService();
-
-async function getEventsArrray() {
-    const events = await discoveryApiService.eventsArr;
-console.log(events);
+let events = [];
+export let obj = {};
+export function getClicedCardObj(eventId) {
+    if (eventId) {
+        obj = events.find(obj => obj.id === eventId);
+        console.log(obj)
+        renderModal(obj);
+    }
 }
-// getEventsArrray();
 
+export function getEventsArray(arr) {
 
-
-
+    events = arr;
+    console.log(events);
+}
 
 
 

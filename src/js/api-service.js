@@ -7,7 +7,7 @@ export default class DiscoveryApiService {
     this.keyWord = '';
     this.countryCode = '';
     this.page = 0;
-    this.eventsArr = [] ;
+
   }
 
   async getEventsByInputValue() {
@@ -19,17 +19,11 @@ export default class DiscoveryApiService {
       options.totalItems = data.page.totalElements > 1000 ? 1000 : data.page.totalElements
       getPagination()
       const events = data._embedded ? data._embedded.events : [];
-      this.eventsArr = events;
-      console.log(this.eventsArr);
       return events;
     } catch (error) {
       console.log(error);
     }
   }
-  get eventsArr() {
-    return this.eventsArr;
-  }
-  set eventsArr(value) {
-    this.eventsArr = value;
-  }
+
+
 }

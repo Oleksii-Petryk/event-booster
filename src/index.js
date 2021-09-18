@@ -10,10 +10,8 @@ import './js/searchEventByCountryName';
 import './js/loader';
 import { onEventCardClick, renderModal} from './js/modal.js';
 import './js/up';
-import './js/render-modal.js';
+import {getEventsArray, obj} from'./js/render-modal.js';
 
-
-renderModal();
 
 refs.input.addEventListener('input', debounce(searchByEventName, 500));
 refs.mainContent.addEventListener('click', onEventCardClick);
@@ -25,6 +23,7 @@ async function getEventsOnFirstLoad() {
   try {
     const events = await discoveryApiService.getEventsByInputValue();
     renderEventsList(events);
+    getEventsArray(events);
   } catch (error) {
     console.log(error);
   }
@@ -32,6 +31,8 @@ async function getEventsOnFirstLoad() {
 
 
 getEventsOnFirstLoad();
+
+
 
 
 

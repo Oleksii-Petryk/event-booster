@@ -23,7 +23,6 @@
   height: 40px;
   padding-left: 30px;
   background: rgba(255, 255, 255, 0.2);
-  // backdrop-filter: blur(20px);
   border: none;
   font-family: Montserrat;
   font-style: normal;
@@ -80,7 +79,6 @@
   width: 15px;
   right: 30px;
   top: 15px;
-  //transition: all 0.4s;
 }
 .dropdown-menu .options__container.active {
   max-height: 210px;
@@ -88,7 +86,6 @@
   overflow-y: scroll;
   border-radius: 0 0 20px 20px;
   background: rgba(255, 255, 255, 0.2);
-  //backdrop-filter: blur(20px);
   z-index: 101;
 }
 .dropdown-menu .options__container.active + .selected {
@@ -120,7 +117,6 @@
   max-height: 0;
   width: 100%;
   opacity: 0;
-  //transition: all 0.4s;;
   overflow: hidden;
   order: 1;
 }

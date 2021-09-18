@@ -172,7 +172,7 @@ body.show-modal .modal {
   line-height: 1.2;
   text-align: center;
 
-  color: #dc56c5;
+  color: var(--title-color);
 
   @media screen and (min-width: 767.98px) {
     text-align: left;
@@ -216,7 +216,7 @@ body.show-modal .modal {
 
 .modal__buy-button:hover,
 .modal__buy-button:focus {
-  background-color: #2e009a;
+  background-color: var(--button-color);
 }
 
 .modal__more-button {
@@ -234,7 +234,7 @@ body.show-modal .modal {
 
 .modal__more-button:hover,
 .modal__more-button:focus {
-  border: 1px solid #dc56c5;
+  border: 1px solid var(--title-color);
 }
 
 .modal__close-button {
@@ -251,13 +251,84 @@ body.show-modal .modal {
   }
 }
 
-.modal__close-icon {
-  width: 15px;
-  height: 15px;
-  fill: var(--title-color);
+.modal__outer {
+  position: relative;
+  width: 24px;
+  height: 17px;
+  cursor: pointer;
 
   @media screen and (min-width: 1279.98px) {
-    width: 25px;
+    width: 35px;
     height: 25px;
   }
+}
+
+.modal__inner {
+  width: inherit;
+  height: inherit;
+}
+
+.modal__label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
+  height: inherit;
+  font-size: 10px;
+  line-height: 1.2;
+  color: var(--button-color);
+  transition: rotate 1000ms ease-in;
+  opacity: 0;
+  cursor: pointer;
+
+  @media screen and (min-width: 1279.98px) {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+}
+
+.modal__inner:before,
+.modal__inner:after {
+  position: absolute;
+  content: '';
+  height: 3px;
+  width: inherit;
+  background: var(--button-color);
+  left: 0;
+  transition: rotate 1000ms ease-in;
+}
+
+.modal__inner:before {
+  top: 55%;
+  transform: rotate(45deg);
+
+  @media screen and (min-width: 1279.98px) {
+    top: 56%;
+  }
+}
+
+.modal__inner:after {
+  bottom: 33%;
+  transform: rotate(-45deg);
+
+  @media screen and (min-width: 1279.98px) {
+    bottom: 36%;
+  }
+}
+
+.modal__outer:hover .modal__label {
+  opacity: 1;
+}
+
+.modal__outer:hover .modal__inner:before,
+.modal__outer:hover .modal__inner:after {
+  transform: rotate(0deg);
+}
+
+.modal__outer:hover .modal__inner:before {
+  top: 0;
+}
+
+.modal__outer:hover .modal__inner:after {
+  bottom: 0;
 }

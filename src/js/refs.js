@@ -13,4 +13,5 @@ export default {
   mask: document.querySelector('.mask'),
   pagination: document.querySelector('.tui-pagination'),
   footer: document.querySelector('.footer'),
+  toUp: document.querySelector('.back_to_top'),
 };

@@ -48,6 +48,11 @@
   pointer-events: none;
 }
 
+.tui-pagination .tui-last,
+.tui-pagination .tui-first {
+  padding: 5px 10px;
+}
+
 .tui-pagination .tui-page-btn:hover {
   border-color: var(--title-color);
   color: var(--title-color);

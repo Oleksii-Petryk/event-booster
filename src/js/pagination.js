@@ -53,7 +53,6 @@ export function getPagination() {
     let firstButton = document.querySelector('.tui-first')
 
     lastButton.textContent = '... ' + `${Math.ceil(totalPage)}`
-    lastButton.style.padding = "5px 10px";
 
     if (options.totalItems > 100 && pagePagination < totalPage - 2) {
           lastButton.classList.remove('tui-hide')

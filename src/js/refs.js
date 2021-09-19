@@ -1,6 +1,5 @@
 export default {
-
-  mainContent: document.querySelector('.main-content'),
+  mainContent: document.querySelector('#main-content'),
   input: document.querySelector('.search-form__input-js'),
   selected: document.querySelector('.selected'),
   optionsContainer: document.querySelector('.options__container'),
@@ -14,4 +13,5 @@ export default {
   pagination: document.querySelector('.tui-pagination'),
   footer: document.querySelector('.footer'),
   toUp: document.querySelector('.back_to_top'),
+  optionsWrapper: document.querySelector('.options-wrapper'),
 };

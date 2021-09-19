@@ -1,6 +1,6 @@
 import countryDatabase from './countryDatabase';
 import countryListTemplate from '../templates/countryListTemplate.hbs';
-
+import DiscoveryApiService from './api-service';
 import refs from './refs';
 import searchEventByCountryName from './searchEventByCountryName';
 
@@ -12,22 +12,28 @@ const countriesToSortAlphabetically = [...countryNames];
 
 const sortedCountries = countriesToSortAlphabetically.sort((a, b) => a.localeCompare(b));
 
-const conteinerForMarkup = refs.optionsContainer;
+const containerForMarkup = refs.optionsContainer;
 
 const countryListMarkup = sortedCountriesMarkup => {
-  conteinerForMarkup.innerHTML = countryListTemplate(sortedCountriesMarkup);
+  containerForMarkup.innerHTML = countryListTemplate(sortedCountriesMarkup);
 };
 
-
-export const getCountryCode = (e) => {
-let selectedCountry = e.target.lastElementChild.textContent;
+export const getCountryCode = e => {
+  let selectedCountry = e.target.lastElementChild.textContent;
   let countryCode = countryDatabase[selectedCountry];
+  if (selectedCountry === 'All countries') {
+    refs.input.value = '';
+    searchEventByCountryName('');
+
+    return (code = '');
+  }
   searchEventByCountryName(countryCode);
+
   refs.input.value = '';
   code = countryCode;
   return countryCode;
-}
+};
 
-const selectedCountryCode = conteinerForMarkup.addEventListener('click', getCountryCode);
+const selectedCountryCode = containerForMarkup.addEventListener('click', getCountryCode);
 
 countryListMarkup(sortedCountries);

@@ -1,18 +1,20 @@
 import refs from './refs';
 
-refs.toUp.addEventListener('click', onClick);
-function onClick() {
-  window.scrollTo({
-    top: 1,
-    behavior: 'smooth',
-  });
-}
+window.addEventListener("scroll", scrollFunction);
 
-window.onscroll = function () {
-  const scrolled = window.pageYOffset || refs.searchingBlock.scrollTop;
-  if (scrolled > 400) {
-    refs.toUp.style.display = 'block';
-  } else {
-    refs.toUp.style.display = 'none';
+function scrollFunction() {
+  if (window.pageYOffset > 300) { 
+    if(!refs.toUp.classList.contains("back_to_top__show")) {
+      refs.toUp.classList.remove("animate__zoomOutDown");
+      refs.toUp.classList.add("back_to_top__show");
+      refs.toUp.classList.add("animate__zoomInDown");
+    }
   }
-};
+  else { 
+    if(refs.toUp.classList.contains("back_to_top__show")) {
+      refs.toUp.classList.remove("back_to_top__show");
+      refs.toUp.classList.remove("animate__zoomInDown");
+      refs.toUp.classList.add("animate__zoomOutDown");
+    }
+  }
+}

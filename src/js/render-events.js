@@ -4,25 +4,33 @@ import errorTemplate from '../templates/error-template.hbs';
 import countryNotification from '../templates/country-notification.hbs';
 
 export function renderEventsList(events) {
+    removeFooter();
     const cardEventsMarkup = cardEventTemplate(events);
     refs.mainContent.insertAdjacentHTML('beforeend', cardEventsMarkup);
 }
 
 export function clearEventsList() {
     refs.mainContent.innerHTML = '';
-    if (refs.footer.classList.contains('footer--error')) {
-        refs.footer.classList.remove('footer--error');
-    };
 }
 
 export function catchError() {
     const errorMarkup = errorTemplate();    
     refs.mainContent.innerHTML = errorMarkup;
-    refs.footer.classList.add('footer--error');
+    addFooter();
 }
 
 export function renderNotification() {
     const notification = countryNotification();
     refs.mainContent.innerHTML = notification;
+    addFooter();
+}
+
+export function addFooter() {
     refs.footer.classList.add('footer--error');
+}
+
+export function removeFooter() {
+    if (refs.footer.classList.contains('footer--error')) {
+        refs.footer.classList.remove('footer--error');
+    };
 }

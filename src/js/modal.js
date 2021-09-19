@@ -3,6 +3,7 @@ import modalTemplate from '../templates/modal-template.hbs';
 import { identity } from 'lodash';
 import { getClicedCardObj } from './render-modal';
 
+
 window.addEventListener('keydown', onEscapeModalClose);
 
 export function renderModal(evt) {
@@ -33,6 +34,9 @@ function closeModal(e) {
 function onBackDropClick(e) {
   if (e.target === e.currentTarget) {
     addBackdropClass();
+    refs.backdrop.classList.add('is-hidden');
+    refs.backdrop.removeEventListener('click', onBackDropClick);
+
   }
 }
 

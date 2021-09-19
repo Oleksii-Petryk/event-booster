@@ -8,8 +8,10 @@
   font-size: 18px;
   line-height: 1.22;
   text-align: center;
-
+  animation: blimp 2s linear 3;
   color: var(--title-color);
+  text-shadow: 0 -40px 100px, 0 0 2px,
+  0 0 0 var(--text-color-descr), 0 10px 3px #000;
 
   @media screen and (min-width: 768px) {
     margin-top: 40px;
@@ -24,5 +26,44 @@
 
     font-size: 50px;
     line-height: 1.22;
+  }
+}
+
+.main__title b {
+  color: var(--title-color);
+  // text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--title-color), 0 0 0.5em var(--title-color),
+  //   0 0 0.1em var(--title-color), 0 10px 3px #000;
+}
+
+@keyframes blimp {
+  40% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  81% {
+    color: #333;
+  }
+  82% {
+    text-shadow: none;
+  }
+  82% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  83% {
+    color: #333;
+    text-shadow: none;
+  }
+  84% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  89% {
+    color: #333;
+    text-shadow: none;
+  }
+  90% {
+    color: inherit;
+    text-shadow: inherit;
   }
 }

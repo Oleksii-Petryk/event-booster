@@ -4,8 +4,6 @@ import { renderEventsList, clearEventsList, catchError } from './render-events.j
 import { code } from './country-selection-logic';
 import { options} from './pagination';
 
-
-
 const discoveryApiService = new DiscoveryApiService();
 
 export default async function searchByEventName(e) {

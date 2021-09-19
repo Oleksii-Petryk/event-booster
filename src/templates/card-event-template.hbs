@@ -1,8 +1,15 @@
 <ul class='events list'>
   {{#each this}}
     <li class='events__item animate__animated animate__zoomInDown' data-id="{{id}}">
-      <div class='events__container'>        
-        <img class='events__image' src='{{images.3.url}}' alt='' />        
+      <div class='events__container'>   
+        <img class='events__image'
+        src=
+        {{#if images.3.url}}
+        {{images.3.url}}
+        {{else}}
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFLIw6Vk_fp4CxFrz3G3LJZLJ7uWbJB1PJIsHYdX--_0i6Jj-Emr3_zVdMPwK-y5Z3CJA&usqp=CAU'
+        {{/if}}
+        alt='' />
       </div>
 
       <h2 class='events__title'>

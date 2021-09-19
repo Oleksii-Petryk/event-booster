@@ -6,25 +6,24 @@ import { getClicedCardObj } from './render-modal';
 window.addEventListener('keydown', onEscapeModalClose);
 
 export function renderModal(evt) {
-        const modalOpener = modalTemplate(evt);
+  const modalOpener = modalTemplate(evt);
   refs.backdrop.insertAdjacentHTML('beforeend', modalOpener);
   const closeButton = document.querySelector('.modal__close-button');
   closeButton.addEventListener('click', closeModal);
-    }
+}
 
-    export function onEventCardClick(evt) {
-      evt.preventDefault();
-      if (evt.target === evt.currentTarget.querySelector('.events')) {
+export function onEventCardClick(evt) {
+  evt.preventDefault();
+  if (evt.target === evt.currentTarget.querySelector('.events')) {
         return;
-      } else if (evt.target.closest('li').classList.contains('events__item')) {
-            refs.backdrop.classList.remove("is-hidden");
-      refs.backdrop.addEventListener('click', onBackDropClick);
-      
-     let clickedEventId = evt.target.closest('li').dataset.id;
-      getClicedCardObj(clickedEventId);
-      };
-      return;
-    
+  } else if (evt.target.closest('li').classList.contains('events__item')) {
+    refs.backdrop.classList.remove("is-hidden");
+    refs.backdrop.addEventListener('click', onBackDropClick);
+
+    let clickedEventId = evt.target.closest('li').dataset.id;
+    getClicedCardObj(clickedEventId);
+  };
+  return; 
 }
 
 function closeModal(e) {
@@ -49,6 +48,3 @@ function addBackdropClass() {
     refs.backdrop.removeEventListener('click', onBackDropClick);
     refs.backdrop.innerHTML = "";
 }
-
-
-

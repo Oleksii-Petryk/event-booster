@@ -1,5 +1,3 @@
-import DiscoveryApiService from './api-service';
-import refs from './refs';
 import { renderModal } from './modal.js';
 
 let events = [];

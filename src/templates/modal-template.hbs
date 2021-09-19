@@ -4,15 +4,22 @@
 
     <div class='modal__body'>
       <div class='modal__cont'>
-        <img class='modal__image' src='{{images.6.url}}' alt='{{name}}' />
+        <img class='modal__image' src='{{images.4.url}}' alt='{{name}}' />
       </div>
       <div class='modal__cont'>
         <ul class='list'>
           <li class='modal__item'>
             <h3 class='modal__title'>info</h3>
-            <p>
-              {{info}}
-            </p>
+            <div class="modal__item--info">
+              <p>
+                {{info}}
+                {{#with info}}
+                {{info}}
+                {{else}}
+                Sorry, no info found
+                {{/with}}
+              </p>
+            </div>
           </li>
 
           <li class='modal__item'>
@@ -29,6 +36,7 @@
             <p>
               {{_embedded.venues.0.city.name}}, {{_embedded.venues.0.country.name}}
               <br />
+              {{_embedded.venues.0.name}}
               {{#with _embedded.venues.0.name}}
               {{name}} 
               {{else}}
@@ -71,6 +79,11 @@
                     </path>
                   </svg>
                   {{priceRanges.1.type}} {{priceRanges.1.min}}-{{priceRanges.1.max}} {{priceRanges.1.currency}}
+                  {{#with priceRanges.1.type}}
+                  {{type}}
+                  {{else}}
+                  Sorry, no found more prices
+                  {{/with}}
                 </p>
                 <button class='modal__button modal__buy-button' type='button' data-modal-open>BUY
                   TICKETS</button>

@@ -74,6 +74,7 @@ body.show-modal .modal {
   margin-left: auto;
   margin-right: auto;
   object-fit: cover;
+  border-radius: 50%;
 
   @media screen and (min-width: 767.98px) {
     width: 70px;
@@ -252,4 +253,9 @@ body.show-modal .modal {
     width: 25px;
     height: 25px;
   }
+}
+
+.modal__item--info {
+  overflow: auto;
+  max-height: 100px;
 }

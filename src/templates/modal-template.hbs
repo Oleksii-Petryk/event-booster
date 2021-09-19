@@ -29,7 +29,12 @@
             <p>
               {{_embedded.venues.0.city.name}}, {{_embedded.venues.0.country.name}}
               <br />
-              {{_embedded.venues.0.name}}
+              {{#with _embedded.venues.0.name}}
+              {{name}} 
+              {{else}}
+              Sorry, no venues found
+              {{/with}}
+              
             </p>
           </li>
 

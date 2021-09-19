@@ -31,6 +31,10 @@
   line-height: 1.25;
   color: var(--font-color);
   border-radius: 20px;
+
+  @media screen and (max-width: 768px) {
+    backdrop-filter: blur(20px);
+  }
 }
 
 .search-form__input {
@@ -90,17 +94,25 @@
 .dropdown-menu .options-wrapper.active {
   max-height: 210px;
   opacity: 1;
-  // overflow-y: scroll;
   border-radius: 0 0 20px 20px;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   z-index: 101;
+
+  @media screen and (max-width: 768px) {
+    backdrop-filter: blur(20px);
+  }
+}
+
+.dropdown-menu .options__container.active + .selected::before {
   padding-right: 3px;
   padding-left: 6px;
 }
+
 .dropdown-menu .options-wrapper.active + .selected {
   border-radius: 20px 20px 0 0;
 }
+
 .dropdown-menu .options-wrapper.active + .selected::before {
   z-index: 101;
   position: absolute;

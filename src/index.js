@@ -12,8 +12,6 @@ import { onEventCardClick} from './js/modal.js';
 import './js/up';
 
 
-// renderModal();
-
 refs.form.addEventListener('submit', e => e.preventDefault());
 refs.input.addEventListener('input', debounce(searchByEventName, 500));
 refs.mainContent.addEventListener('click', onEventCardClick);

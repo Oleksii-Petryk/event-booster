@@ -30,6 +30,10 @@
   line-height: 1.25;
   color: var(--font-color);
   border-radius: 20px;
+
+  @media screen and (max-width: 768px) {
+    backdrop-filter: blur(20px);
+  }
 }
 
 .search-form__input {
@@ -87,10 +91,16 @@
   border-radius: 0 0 20px 20px;
   background: rgba(255, 255, 255, 0.2);
   z-index: 101;
+
+  @media screen and (max-width: 768px) {
+    backdrop-filter: blur(20px);
+  }
 }
+
 .dropdown-menu .options__container.active + .selected {
   border-radius: 20px 20px 0 0;
 }
+
 .dropdown-menu .options__container.active + .selected::before {
   position: absolute;
   content: '';

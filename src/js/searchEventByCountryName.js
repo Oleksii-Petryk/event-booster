@@ -16,7 +16,6 @@ export default async function searchEventByCountryName(countryNameCode) {
       return;
       
     }
-    getEventsArray(events);
     clearEventsList();
     renderEventsList(events);
   } catch (error) {

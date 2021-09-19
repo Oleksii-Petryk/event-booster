@@ -2,8 +2,7 @@ import DiscoveryApiService from './api-service';
 import { alertNotice, errorNotice } from './pnotify-module';
 import { renderEventsList, clearEventsList, catchError } from './render-events.js';
 import { code } from './country-selection-logic';
-import { options, getPagination } from './pagination';
-import { getEventsArray } from './render-modal';
+import { options} from './pagination';
 
 
 
@@ -20,8 +19,6 @@ export default async function searchByEventName(e) {
                 catchError();
                 return;
             }
-            console.log(events);
-            getEventsArray(events);
             clearEventsList();
             renderEventsList(events);
             

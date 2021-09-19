@@ -3,32 +3,52 @@ import modalTemplate from '../templates/modal-template.hbs';
 import { identity } from 'lodash';
 import { getClicedCardObj } from './render-modal';
 
+window.addEventListener('keydown', onEscapeModalClose);
+
 export function renderModal(evt) {
         const modalOpener = modalTemplate(evt);
-        refs.backdrop.insertAdjacentHTML('beforeend', modalOpener);
+  refs.backdrop.insertAdjacentHTML('beforeend', modalOpener);
+  const closeButton = document.querySelector('.modal__close-button');
+  closeButton.addEventListener('click', closeModal);
     }
 
     export function onEventCardClick(evt) {
       evt.preventDefault();
-      
-        if (!evt.target.closest('li').classList.contains('events__item')) {
-          return
-        };
-      refs.backdrop.classList.remove("is-hidden");
-      const closeButton = document.querySelector('.modal__close-button');
-      // closeButton.addEventListener('click', closeModal);
+      if (evt.target === evt.currentTarget.querySelector('.events')) {
+        return;
+      } else if (evt.target.closest('li').classList.contains('events__item')) {
+            refs.backdrop.classList.remove("is-hidden");
       refs.backdrop.addEventListener('click', onBackDropClick);
-     let clickedEventId = evt.target.parentElement.dataset.id;
+      
+     let clickedEventId = evt.target.closest('li').dataset.id;
       getClicedCardObj(clickedEventId);
-}
+      };
+      return;
     
+}
+
 function closeModal(e) {
-  refs.backdrop.classList.add("is-hidden");
+  addBackdropClass();
 }
 
 function onBackDropClick(e) {
   if (e.target === e.currentTarget) {
-    refs.backdrop.classList.add("is-hidden");
-    refs.backdrop.removeEventListener('click', onBackDropClick);
+    addBackdropClass();
   }
 }
+
+function onEscapeModalClose(evt) {
+    if (evt.key !== 'Escape') {
+        return;
+    }
+    addBackdropClass();
+}
+
+function addBackdropClass() {
+  refs.backdrop.classList.add("is-hidden");
+    refs.backdrop.removeEventListener('click', onBackDropClick);
+    refs.backdrop.innerHTML = "";
+}
+
+
+

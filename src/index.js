@@ -8,9 +8,8 @@ import './js/dropdown-menu.js';
 import './js/country-selection-logic';
 import './js/searchEventByCountryName';
 import './js/loader';
-import { onEventCardClick, renderModal} from './js/modal.js';
+import { onEventCardClick} from './js/modal.js';
 import './js/up';
-import {getEventsArray, obj} from'./js/render-modal.js';
 
 
 refs.input.addEventListener('input', debounce(searchByEventName, 500));
@@ -23,7 +22,6 @@ async function getEventsOnFirstLoad() {
   try {
     const events = await discoveryApiService.getEventsByInputValue();
     renderEventsList(events);
-    getEventsArray(events);
   } catch (error) {
     console.log(error);
   }

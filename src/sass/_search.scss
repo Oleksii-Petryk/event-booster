@@ -31,10 +31,6 @@
   line-height: 1.25;
   color: var(--font-color);
   border-radius: 20px;
-
-  @media screen and (max-width: 768px) {
-    backdrop-filter: blur(20px);
-  }
 }
 
 .search-form__input {
@@ -98,10 +94,6 @@
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   z-index: 101;
-
-  @media screen and (max-width: 768px) {
-    backdrop-filter: blur(20px);
-  }
 }
 
 .dropdown-menu .options__container.active + .selected::before {

@@ -7,7 +7,7 @@ export function renderModal() {
 }
 
 export function onEventCardClick(evt) {
-  if (refs.optionsContainer.classList.contains('active')) {
+  if (refs.optionsWrapper.classList.contains('active')) {
     return;
   }
   evt.preventDefault();

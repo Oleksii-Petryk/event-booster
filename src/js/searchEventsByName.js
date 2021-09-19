@@ -2,7 +2,9 @@ import DiscoveryApiService from './api-service';
 import { alertNotice, errorNotice } from './pnotify-module';
 import { renderEventsList, clearEventsList, catchError } from './render-events.js';
 import { code } from './country-selection-logic';
-import { options} from './pagination';
+import { options, getPagination } from './pagination';
+import refs from './refs';
+
 
 const discoveryApiService = new DiscoveryApiService();
 
@@ -24,3 +26,5 @@ export default async function searchByEventName(e) {
         errorNotice();
     }
 }
+
+ 

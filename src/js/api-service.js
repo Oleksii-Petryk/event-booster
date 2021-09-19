@@ -1,4 +1,5 @@
 import { options, getPagination } from './pagination';
+import { getEventsArray } from './render-modal';
 
 export default class DiscoveryApiService {
   constructor() {
@@ -18,6 +19,7 @@ export default class DiscoveryApiService {
       options.totalItems = data.page.totalElements > 1000 ? 1000 : data.page.totalElements
       getPagination()
       const events = data._embedded ? data._embedded.events : [];
+      getEventsArray(events);
       return events;
     } catch (error) {
       console.log(error);

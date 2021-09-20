@@ -94,11 +94,11 @@ body.show-modal .modal {
 }
 
 .modal__body {
-  display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
 
   @media screen and (min-width: 767.98px) {
+    display: flex;
     margin-bottom: 45px;
   }
 }

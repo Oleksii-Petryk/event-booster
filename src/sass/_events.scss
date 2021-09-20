@@ -2,14 +2,13 @@
   display: flex;
   flex-wrap: wrap;
   margin-left: var(--grid-margin-out);
-  margin-top: var(--grid-margin-out);
+  margin-top: var(--grid-margin-top__out);
 }
 
 .events__item {
   flex-basis: calc((100% - var(--grid-margin-in) * var(--grid-item)) / var(--grid-item));
   margin-left: var(--grid-margin-in);
-  margin-top: var(--grid-margin-in);
-  margin-bottom: 40px;
+  margin-top: var(--grid-margin-top);
   scale: 1;
   display: block;
   text-align: center;
@@ -19,14 +18,6 @@
   &:focus {
     cursor: pointer;
     transform: scale(1.1, 1.15);
-  }
-
-  @media screen and (min-width: 767.98px) {
-    margin-bottom: 60px;
-  }
-
-  @media screen and (min-width: 1279.98px) {
-    margin-bottom: 65px;
   }
 }
 

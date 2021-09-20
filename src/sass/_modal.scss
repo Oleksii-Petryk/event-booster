@@ -340,25 +340,31 @@ body.show-modal .modal {
 .animation-open {
   animation: animate__slideInDown;
   animation-duration: 1.2s;
+  transition: all 1.25s cubic-bezier(.4,0,.2,1);
 }
 .animation-close {
   animation: animate__slideInDown;
   animation-duration: 0.9s;
+  transition: all 1.25s cubic-bezier(.4,0,.2,1);
 }
 
 @keyframes animate__slideInDown {
   from {
-    margin-top: -70%;
+    // margin-top: -70%;
+    transform: scale(0.3);
   }
   to {
-    margin-top: 0%;
+    // margin-top: 0%;
+    transform: scale(1);
   }
 }
 @keyframes aanimate__slideInDown {
   from {
-    margin-top: 0%;
+    // margin-top: 0%;
+    transform: scale(1);
   }
   to {
-    margin-top: 60%;
+    // margin-top: 60%;
+    transform: scale(0.3);
   }
 }

@@ -35,11 +35,10 @@ function closeModal(e) {
 
 function onBackDropClick(e) {
   if (e.target === e.currentTarget) {
-
     addBackdropClass();
+
     refs.backdrop.classList.add('is-hidden');
     refs.backdrop.removeEventListener('click', onBackDropClick);
-
   }
 }
 
@@ -47,12 +46,12 @@ function onEscapeModalClose(evt) {
     if (evt.key !== 'Escape') {
         return;
     }
+    refs.backdrop.classList.remove("animation-open");
+    refs.backdrop.classList.add("animation-close");
     addBackdropClass();
 }
 
 function addBackdropClass() {
-  refs.backdrop.classList.remove("animation-open");
-  refs.backdrop.classList.add("animation-close");
   refs.backdrop.classList.add("is-hidden");
     refs.backdrop.removeEventListener('click', onBackDropClick);
     refs.backdrop.innerHTML = "";

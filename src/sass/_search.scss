@@ -88,7 +88,7 @@
 }
 
 .dropdown-menu .options-wrapper.active {
-  max-height: 210px;
+  max-height: 170px;
   opacity: 1;
   border-radius: 0 0 20px 20px;
   background: rgba(255, 255, 255, 0.2);
@@ -128,7 +128,6 @@
 .dropdown-menu .options-wrapper {
   position: absolute;
   top: 40px;
-  // padding-top: 6px;
   max-height: 0;
   width: 100%;
   opacity: 0;
@@ -141,7 +140,7 @@
 .dropdown-menu .option {
   padding-left: 24px;
   font-size: 16px;
-  line-height: 1.8;
+  line-height: 1.25;
   text-align: left;
   color: #cccccc;
   cursor: pointer;
@@ -193,6 +192,6 @@
 
 .options__container {
   padding-top: 6px;
-  max-height: 210px;
+  max-height: 170px;
   overflow-y: scroll;
 }

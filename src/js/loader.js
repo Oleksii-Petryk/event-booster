@@ -1,5 +1,4 @@
 import refs from './refs';
-import { addFooter } from './render-events';
 
 window.addEventListener('load', () => {
     refs.mask.classList.add('hide');

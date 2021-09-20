@@ -6,7 +6,6 @@ window.addEventListener('load', () => {
     setTimeout(() => { 
         refs.mask.remove();
     }, 600);
-    addFooter();
 });
 
 

@@ -53,8 +53,10 @@
 .main__bg {
   margin-right: auto;
   margin-left: auto;
+  margin-top: -10px;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: 100% auto;
+  background-position: bottom;
   padding-top: 15px;
   @media screen and (max-width: 767.98px) {
     max-width: 320px;
@@ -65,12 +67,13 @@
     max-width: 768px;
     background-image: url('../images/bg/main/tablet-bg-body.png');
     padding-top: 15px;
+    margin-top: 5px;
   }
 
   @media screen and (min-width: 1280px) {
     max-width: 1280px;
     background-image: url('../images/bg/main/desktop-bg-body.png');
-    padding-top: 15px;
+    padding-top: 10px;
   }
 }
 

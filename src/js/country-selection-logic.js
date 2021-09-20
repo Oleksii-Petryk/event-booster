@@ -4,6 +4,7 @@ import DiscoveryApiService from './api-service';
 import refs from './refs';
 import searchEventByCountryName from './searchEventByCountryName';
 
+
 export let code = '';
 
 const countryNames = Object.keys(countryDatabase);
@@ -24,11 +25,10 @@ export const getCountryCode = e => {
   if (selectedCountry === 'All countries') {
     refs.input.value = '';
     searchEventByCountryName('');
-
     return (code = '');
   }
   searchEventByCountryName(countryCode);
-
+  
   refs.input.value = '';
   code = countryCode;
   return countryCode;

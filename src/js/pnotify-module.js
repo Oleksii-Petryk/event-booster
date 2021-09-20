@@ -1,4 +1,4 @@
-import { alert, error } from '@pnotify/core/dist/PNotify';
+import { alert, error, info } from '@pnotify/core/dist/PNotify';
 
 export function alertNotice() {
     
@@ -18,3 +18,11 @@ export function errorNotice() {
     });
 };
 
+export function infoNotice() {
+    
+    return info({
+        text: 'There are no events in the selected country!',
+        sticker: false,
+        delay: 2000
+    });
+};

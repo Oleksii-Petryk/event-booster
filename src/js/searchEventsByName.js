@@ -1,5 +1,5 @@
 import DiscoveryApiService from './api-service';
-import { alertNotice, errorNotice } from './pnotify-module';
+import { alertNotice, errorNotice, infotNotice } from './pnotify-module';
 import { renderEventsList, clearEventsList, catchError } from './render-events.js';
 import { code } from './country-selection-logic';
 import { options, getPagination } from './pagination';

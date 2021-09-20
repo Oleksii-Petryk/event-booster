@@ -1,7 +1,8 @@
 import DiscoveryApiService from './api-service';
 import { renderEventsList, clearEventsList, renderNotification } from './render-events.js';
 import { options, getPagination } from './pagination';
-import { getEventsArray } from './render-modal';
+import { alertNotice, errorNotice, infoNotice } from './pnotify-module';
+
 
 const discoveryApiService = new DiscoveryApiService();
 
@@ -13,6 +14,7 @@ export default async function searchEventByCountryName(countryNameCode) {
     const events = await discoveryApiService.getEventsByInputValue();
     if (events.length === 0) {
       renderNotification();
+      infoNotice()
       return;
       
     }

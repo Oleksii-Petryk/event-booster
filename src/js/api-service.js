@@ -33,7 +33,7 @@ export default class DiscoveryApiService {
         `${this.BASE_URL}events.json?keyword=${this.keyWord}&countryCode=${this.countryCode}&page=${this.page}&attractionId=${this.attractionsId}&apikey=${this.API_KEY}`,
       );
       const data = await responce.json();
-      options.totalItems = data.page.totalElements > 1000 ? 1000 : data.page.totalElements
+      options.totalItems = 20;
       getPagination()
       const events = data._embedded ? data._embedded.events : [];
       getEventsArray(events);

@@ -8,6 +8,8 @@ window.addEventListener('keydown', onEscapeModalClose);
 
 export function renderModal(evt) {
   const modalOpener = modalTemplate(evt);
+  refs.backdrop.classList.remove("animation-close");
+  refs.backdrop.classList.add("animation-open");
   refs.backdrop.insertAdjacentHTML('beforeend', modalOpener);
   const closeButton = document.querySelector('.modal__close-button');
   closeButton.addEventListener('click', closeModal);
@@ -19,10 +21,7 @@ export function onEventCardClick(evt) {
         return;
   } else if (evt.target.closest('li').classList.contains('events__item')) {
     refs.backdrop.classList.remove("is-hidden");
-  refs.backdrop.classList.remove("animation-close");
-  refs.backdrop.classList.add("animation-open");
     refs.backdrop.addEventListener('click', onBackDropClick);
-
     let clickedEventId = evt.target.closest('li').dataset.id;
     getClicedCardObj(clickedEventId);
   };
@@ -36,7 +35,6 @@ function closeModal(e) {
 function onBackDropClick(e) {
   if (e.target === e.currentTarget) {
     addBackdropClass();
-
     refs.backdrop.classList.add('is-hidden');
     refs.backdrop.removeEventListener('click', onBackDropClick);
   }
@@ -46,12 +44,12 @@ function onEscapeModalClose(evt) {
     if (evt.key !== 'Escape') {
         return;
     }
-    refs.backdrop.classList.remove("animation-open");
-    refs.backdrop.classList.add("animation-close");
     addBackdropClass();
 }
 
 function addBackdropClass() {
+      refs.backdrop.classList.remove("animation-open");
+      refs.backdrop.classList.add("animation-close");
   refs.backdrop.classList.add("is-hidden");
     refs.backdrop.removeEventListener('click', onBackDropClick);
     refs.backdrop.innerHTML = "";

@@ -338,33 +338,29 @@ body.show-modal .modal {
 }
 
 .animation-open {
-  animation: animate__slideInDown;
-  animation-duration: 1.2s;
-  transition: all 1.25s cubic-bezier(.4,0,.2,1);
+  animation: animate__zoomIn;
+  animation-duration: 0.5s;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .animation-close {
-  animation: animate__slideInDown;
-  animation-duration: 0.9s;
-  transition: all 1.25s cubic-bezier(.4,0,.2,1);
+  animation: animate__zoomOut;
+  animation-duration: 0.25s;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes animate__slideInDown {
+@keyframes animate__zoomIn {
   from {
-    // margin-top: -70%;
-    transform: scale(0.3);
+    transform: scale(0.5);
   }
   to {
-    // margin-top: 0%;
     transform: scale(1);
   }
 }
-@keyframes aanimate__slideInDown {
+@keyframes animate__zoomOut {
   from {
-    // margin-top: 0%;
-    transform: scale(1);
+    transform: scale(0.8);
   }
   to {
-    // margin-top: 60%;
-    transform: scale(0.3);
+    transform: scale(0.5);
   }
 }

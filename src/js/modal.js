@@ -1,7 +1,8 @@
 import refs from './refs';
 import modalTemplate from '../templates/modal-template.hbs';
-import { identity } from 'lodash';
 import { getClicedCardObj } from './render-modal';
+import getAttractionById from './getAttractionById';
+
 
 
 window.addEventListener('keydown', onEscapeModalClose);
@@ -12,6 +13,8 @@ export function renderModal(evt) {
   refs.backdrop.classList.add("animation-open");
   refs.backdrop.insertAdjacentHTML('beforeend', modalOpener);
   const closeButton = document.querySelector('.modal__close-button');
+  const moreFromAuthorbtn = document.querySelector('.modal__more-button')
+  moreFromAuthorbtn.addEventListener('click', getAttractionById);
   closeButton.addEventListener('click', closeModal);
 }
 
@@ -28,7 +31,7 @@ export function onEventCardClick(evt) {
   return; 
 }
 
-function closeModal(e) {
+export function closeModal(e) {
   addBackdropClass();
 }
 

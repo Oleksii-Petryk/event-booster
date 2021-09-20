@@ -104,6 +104,7 @@ body.show-modal .modal {
 }
 
 .modal__cont:first-child {
+  display: inline-flex;
   @media screen and (min-width: 767.98px) {
     width: 230px;
   }
@@ -220,16 +221,18 @@ body.show-modal .modal {
   color: var(--text-color-descr);
   background-color: var(--button-color);
   border: none;
+  transition: all 0.15s cubic-bezier(0, 0, 1, 0.74);
 
   @media screen and (max-width: 768px) {
     margin-left: auto;
     margin-right: auto;
-  }  
+  }
 }
 
 .modal__buy-button:hover,
 .modal__buy-button:focus {
   background-color: var(--button-color);
+  transform: scale(1.1);
 }
 
 .modal__more-button {
@@ -239,6 +242,7 @@ body.show-modal .modal {
   color: var(--button-color);
   border: 1px solid var(--button-color);
   background-color: transparent;
+  transition: all 0.15s cubic-bezier(0, 0, 1, 0.74);
 
   @media screen and (min-width: 767.98px) {
     width: 255px;
@@ -248,6 +252,9 @@ body.show-modal .modal {
 .modal__more-button:hover,
 .modal__more-button:focus {
   border: 1px solid var(--title-color);
+  transform: scale(1.1);
+  color: var(--title-color);
+  cursor: pointer;
 }
 
 .modal__close-button {
@@ -308,7 +315,7 @@ body.show-modal .modal {
   width: inherit;
   background: var(--button-color);
   left: 0;
-  transition: rotate 1000ms ease-in;
+  transition: all 0.15s cubic-bezier(0, 0, 1, 0.74);
 }
 
 .modal__inner:before {
@@ -349,12 +356,12 @@ body.show-modal .modal {
 .animation-open {
   animation: animate__zoomIn;
   animation-duration: 0.5s;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.15s cubic-bezier(0, 0, 1, 0.74);
 }
 .animation-close {
   animation: animate__zoomOut;
-  animation-duration: 0.25s;
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  animation-duration: 0.15s;
+  transition: all 0.15s cubic-bezier(0, 0, 1, 0.74);
 }
 
 @keyframes animate__zoomIn {

@@ -16,6 +16,7 @@
   cursor: pointer;
   border-radius: 15px 0px;
   color: var(--text-color-descr);
+  transition: box-shadow 0.15s cubic-bezier(0, 0, 1, 0.74);
 
   @media screen and (max-width: 767.98px) {
     width: 35px;

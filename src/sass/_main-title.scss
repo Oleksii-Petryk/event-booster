@@ -8,10 +8,9 @@
   font-size: 18px;
   line-height: 1.22;
   text-align: center;
-  animation: blimp 2s linear 3;
+  animation: blimp 2s linear 2;
   color: var(--title-color);
-  text-shadow: 0 -40px 100px, 0 0 2px,
-  0 0 0 var(--text-color-descr), 0 10px 3px #000;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 0 var(--text-color-descr), 0 10px 3px #000;
 
   @media screen and (min-width: 768px) {
     margin-top: 40px;
@@ -31,8 +30,6 @@
 
 .main__title b {
   color: var(--title-color);
-  // text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--title-color), 0 0 0.5em var(--title-color),
-  //   0 0 0.1em var(--title-color), 0 10px 3px #000;
 }
 
 @keyframes blimp {

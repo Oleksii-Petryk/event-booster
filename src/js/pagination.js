@@ -76,7 +76,7 @@ export function getPagination() {
     discoveryApiService.countryCode = countryCode()
 
     options.page = currentPage
-    const events = await discoveryApiService.getEventsByInputValue()
+    const events = await discoveryApiService.getEventsByInputValue();
 
     refs.mainContent.scrollIntoView({
       behavior: 'smooth',

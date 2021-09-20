@@ -42,6 +42,7 @@
   vertical-align: middle;
   border: 1px solid transparent;
   border-radius: 50% 0 50% 0;
+  transition: all 0.15s cubic-bezier(0, 0, 1, 0.74);
 }
 
 .tui-pagination .tui-hide {

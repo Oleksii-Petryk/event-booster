@@ -47,7 +47,7 @@
           </li>
 
           <li class='modal__item'>
-            <h3 class='modal__title'>who</h3>
+            <h3 class='modal__title' data-attractionId='{{_embedded.attractions.0.id}}'>who</h3>
             <p>
               {{name}}
             </p>
@@ -66,8 +66,7 @@
                   </svg>
                   {{priceRanges.0.type}} {{priceRanges.0.min}}-{{priceRanges.0.max}} {{priceRanges.0.currency}}
                 </p>
-                <button class='modal__button modal__buy-button' type='button' data-modal-open>BUY
-                  TICKETS</button>
+                <a class='modal__button modal__buy-button link' href='{{_embedded.venues.0.url}}' target='_blank' rel='noopener noreferrer'>BUY TICKETS</a>
               </li>
 
               <li class='modal__price'>
@@ -85,8 +84,7 @@
                   Sorry, no found more prices
                   {{/with}}
                 </p>
-                <button class='modal__button modal__buy-button' type='button' data-modal-open>BUY
-                  TICKETS</button>
+                <a class='modal__button modal__buy-button link' href='{{_embedded.venues.0.url}}' target='_blank' rel='noopener noreferrer'>BUY TICKETS</a>
               </li>
             </ul>
           </li>

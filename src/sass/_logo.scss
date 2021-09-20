@@ -4,11 +4,11 @@
   height: 30px;
   left: 23px;
   top: 23px;
+  transition: all 0.15s cubic-bezier(0, 0, 1, 0.74);
 
   &:hover,
   &:focus {
-    animation: pulse;
-    animation-duration: 0.5s;
+    transform: scale(1.15);
   }
 
   @media screen and (min-width: 768px) {
@@ -23,4 +23,3 @@
     height: 67px;
   }
 }
-

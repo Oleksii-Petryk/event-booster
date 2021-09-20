@@ -19,6 +19,7 @@
 
 .footer-link {
   color: var(--font-color);
+  transition: all 0.15s cubic-bezier(0, 0, 1, 0.74);
 
   &:hover,
   &:focus {

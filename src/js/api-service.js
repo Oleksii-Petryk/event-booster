@@ -8,12 +8,15 @@ export default class DiscoveryApiService {
     this.keyWord = '';
     this.countryCode = '';
     this.page = 0;
+    this.size = 20;
   }
 
   async getEventsByInputValue() {
     try {
+      options.itemsPerPage = window.innerWidth > 767 && window.innerWidth < 1280 ? 21 : 20
+      this.size = options.itemsPerPage
       const responce = await fetch(
-        `${this.BASE_URL}events.json?keyword=${this.keyWord}&countryCode=${this.countryCode}&page=${this.page}&apikey=${this.API_KEY}`,
+        `${this.BASE_URL}events.json?keyword=${this.keyWord}&countryCode=${this.countryCode}&page=${this.page}&size=${this.size}&apikey=${this.API_KEY}`,
       );
       const data = await responce.json();
       options.totalItems = data.page.totalElements > 1000 ? 1000 : data.page.totalElements

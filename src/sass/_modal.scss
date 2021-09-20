@@ -336,3 +336,29 @@ body.show-modal .modal {
 .modal__outer:hover .modal__inner:after {
   bottom: 0;
 }
+
+.animation-open {
+  animation: animate__slideInDown;
+  animation-duration: 1.2s;
+}
+.animation-close {
+  animation: animate__slideInDown;
+  animation-duration: 0.9s;
+}
+
+@keyframes animate__slideInDown {
+  from {
+    margin-top: -70%;
+  }
+  to {
+    margin-top: 0%;
+  }
+}
+@keyframes aanimate__slideInDown {
+  from {
+    margin-top: 0%;
+  }
+  to {
+    margin-top: 60%;
+  }
+}

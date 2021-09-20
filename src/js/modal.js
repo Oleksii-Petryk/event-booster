@@ -23,6 +23,7 @@ export function onEventCardClick(evt) {
   if (evt.target === evt.currentTarget.querySelector('.events')) {
         return;
   } else if (evt.target.closest('li').classList.contains('events__item')) {
+    refs.body.classList.add("body__no-scroll")
     refs.backdrop.classList.remove("is-hidden");
     refs.backdrop.addEventListener('click', onBackDropClick);
     let clickedEventId = evt.target.closest('li').dataset.id;
@@ -37,6 +38,7 @@ export function closeModal(e) {
 
 function onBackDropClick(e) {
   if (e.target === e.currentTarget) {
+    refs.body.classList.remove("body__no-scroll")
     addBackdropClass();
     refs.backdrop.classList.add('is-hidden');
     refs.backdrop.removeEventListener('click', onBackDropClick);
@@ -46,11 +48,14 @@ function onBackDropClick(e) {
 function onEscapeModalClose(evt) {
     if (evt.key !== 'Escape') {
         return;
-    }
+  }
+  refs.body.classList.remove("body__no-scroll")
     addBackdropClass();
 }
 
 function addBackdropClass() {
+
+  refs.body.classList.remove("body__no-scroll")
       refs.backdrop.classList.remove("animation-open");
       refs.backdrop.classList.add("animation-close");
   refs.backdrop.classList.add("is-hidden");

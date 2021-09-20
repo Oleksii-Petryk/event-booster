@@ -3,6 +3,7 @@ import { renderEventsList, clearEventsList, renderNotification } from './render-
 import { options, getPagination } from './pagination';
 import { alertNotice, errorNotice, infoNotice } from './pnotify-module';
 
+
 const discoveryApiService = new DiscoveryApiService();
 
 export default async function searchEventByCountryName(countryNameCode) {

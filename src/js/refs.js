@@ -13,4 +13,6 @@ export default {
   pagination: document.querySelector('.tui-pagination'),
   footer: document.querySelector('.footer'),
   toUp: document.querySelector('.back_to_top'),
+  optionsWrapper: document.querySelector('.options-wrapper'),
+  form: document.querySelector('.search-form'),
 };

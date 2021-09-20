@@ -9,7 +9,6 @@ export default async function getAttractionById() {
     const discoveryApiService = new DiscoveryApiService();
     options.page = 1;
     const id = document.querySelector('[data-attractionId]').dataset.attractionid;
-    console.log(id)
     discoveryApiService.attractionsId = id;
 
     try {

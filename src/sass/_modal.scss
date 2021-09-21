@@ -35,13 +35,12 @@ body.show-modal .modal {
 .modal {
   position: absolute;
   z-index: 101;
-  top: 50%;
+  top: 20px;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%) scale(1);
   transition: transform ease-in-out 600ms;
 
   display: block;
-  margin-top: 25px;
   padding-top: 75px;
   padding-bottom: 105px;
   padding-right: 15px;
@@ -53,7 +52,7 @@ body.show-modal .modal {
   background-color: #fff2fd;
 
   @media screen and (min-width: 767.98px) {
-    margin-top: 160px;
+    top: 30px;
     padding-top: 30px;
     padding-bottom: 55px;
     padding-left: 50px;
@@ -63,7 +62,7 @@ body.show-modal .modal {
   }
 
   @media screen and (min-width: 1279.98px) {
-    margin-top: 200px;
+    top: 40px;
     padding-top: 60px;
     padding-bottom: 60px;
     padding-left: 30px;

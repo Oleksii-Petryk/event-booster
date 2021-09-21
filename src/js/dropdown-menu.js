@@ -17,13 +17,11 @@ function onSelectClick() {
   refs.selected.classList.add('colored');
   refs.selected.style.zIndex = '101';
   refs.body.addEventListener('click', selectedMisClick);
-  refs.selected.addEventListener('blur', onSelectBlur);
 }
 
 refs.optionsWrapper.addEventListener('click', onWrapperClick);
 
 function onWrapperClick(e) {
-  console.log('ok');
   let selectedCountry = e.target.lastElementChild.textContent;
   refs.selected.textContent = selectedCountry;
   refs.optionsWrapper.classList.remove('active');
@@ -47,10 +45,6 @@ function selectedMisClick(e) {
 
 export function clearSelect() {
   refs.selected.textContent = '';
-}
-
-function onSelectBlur(e) {
-  console.log(e);
 }
 
 refs.selected.addEventListener('focus', () => {

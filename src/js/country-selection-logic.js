@@ -47,13 +47,21 @@ countryListMarkup(sortedCountries);
 
 const LowerCaseCountries = sortedCountries.join(' ').toLowerCase().split(' ');
 
-console.log(LowerCaseCountries);
+refs.selected.addEventListener('keypress', searchCountryByPart);
 
-refs.selected.addEventListener('keypress', e => {
-  console.log(e.code);
-  countryArr.push(e.key);
-  let countryStr = countryArr.join('').toLowerCase();
-  console.log(countryStr);
+let countryStr;
+
+function searchCountryByPart(e) {
+  if (e.code === 'Enter') {
+    return;
+  }
+  if (e.code === 'Backspace') {
+    countryArr.pop();
+  } else {
+    countryArr.push(e.key);
+  }
+
+  countryStr = countryArr.join('').toLowerCase();
 
   const searchCountry = LowerCaseCountries.filter(country => {
     return country.includes(countryStr);
@@ -63,19 +71,21 @@ refs.selected.addEventListener('keypress', e => {
     return e.charAt(0).toUpperCase() + e.slice(1);
   });
   countryListMarkup(normalCaseCountries);
-  return normalCaseCountries;
-});
+  return countryStr;
+}
 
 export function clearCountrySearch() {
   countryArr = [];
 }
 
 refs.selected.addEventListener('keydown', e => {
-  if (e.code === 'Backspace') {
-    countryArr.pop();
-    countryListMarkup(sortedCountries);
-    console.log(normalCaseCountries);
+  if (e.code === 'Enter') {
+    e.preventDefault();
 
-    return countryListMarkup(normalCaseCountries);
+    return;
   }
+  if (e.code === 'Backspace') {
+    return searchCountryByPart(e);
+  }
+  return;
 });

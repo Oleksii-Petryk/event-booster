@@ -32,14 +32,27 @@ body.show-modal .modal {
   transform: translateX(0, -100%) scale(0.2);
 }
 
-.modal {
+.modal-thumb {
   position: absolute;
   z-index: 101;
-  top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   left: 50%;
   transform: translate(-50%) scale(1);
   transition: transform ease-in-out 600ms;
 
+  @media screen and (min-width: 767.98px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  @media screen and (min-width: 1279.98px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+.modal {
   display: block;
   padding-top: 75px;
   padding-bottom: 105px;
@@ -52,7 +65,6 @@ body.show-modal .modal {
   background-color: #fff2fd;
 
   @media screen and (min-width: 767.98px) {
-    top: 30px;
     padding-top: 30px;
     padding-bottom: 55px;
     padding-left: 50px;
@@ -62,7 +74,6 @@ body.show-modal .modal {
   }
 
   @media screen and (min-width: 1279.98px) {
-    top: 40px;
     padding-top: 60px;
     padding-bottom: 60px;
     padding-left: 30px;

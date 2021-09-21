@@ -6,7 +6,9 @@
 }
 
 .events__item {
-  flex-basis: calc((100% - var(--grid-margin-in) * var(--grid-item)) / var(--grid-item));
+  flex-basis: calc(
+    (100% - var(--grid-margin-in) * var(--grid-item)) / var(--grid-item)
+  );
   margin-left: var(--grid-margin-in);
   margin-top: var(--grid-margin-top);
   scale: 1;
@@ -64,6 +66,11 @@
   font-size: 14px;
   line-height: 1.21;
   color: var(--title-color);
+
+  @media screen and (max-width: 767.98px) {
+    max-width: 130px;
+    overflow-wrap: break-word;
+  }
 
   @media screen and (min-width: 767.98px) {
     font-size: 16px;

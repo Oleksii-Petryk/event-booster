@@ -1,7 +1,8 @@
 import DiscoveryApiService from './api-service.js';
 import { renderEventsList, clearEventsList } from './render-events.js';
 import { options } from './pagination';
-import {closeModal} from './modal'
+import { closeModal } from './modal'
+import refs from './refs'
 
 
 
@@ -14,9 +15,14 @@ export default async function getAttractionById() {
     try {
     const events = await discoveryApiService.getEventsByAttractionId();
     
-        clearEventsList();
-        closeModal();
+    clearEventsList();
+    closeModal();
+    
     renderEventsList(events);
+    refs.mainContent.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+    })
   } catch (error) {
     console.log(error);
   }

@@ -55,6 +55,7 @@ function searchCountryByPart(e) {
   if (e.code === 'Enter') {
     return;
   }
+
   if (e.code === 'Backspace') {
     countryArr.pop();
   } else {
@@ -67,10 +68,26 @@ function searchCountryByPart(e) {
     return country.includes(countryStr);
   });
 
-  normalCaseCountries = searchCountry.map(e => {
-    return e.charAt(0).toUpperCase() + e.slice(1);
+  normalCaseCountries = searchCountry.map(element => {
+    let result = element.charAt(0).toUpperCase() + element.slice(1);
+    if (result.includes('_')) {
+      let splitResult = result.split('');
+      for (let i = 0; i < splitResult.length; i++) {
+        const element = splitResult[i];
+        if (element === '_') {
+          const nextLetter = splitResult[i + 1];
+          const bigNextLetter = nextLetter.toLocaleUpperCase();
+          splitResult.splice(i + 1, 1, bigNextLetter);
+        }
+      }
+      result = splitResult.join('');
+    }
+
+    return result;
   });
+
   countryListMarkup(normalCaseCountries);
+
   return countryStr;
 }
 
@@ -82,6 +99,10 @@ refs.selected.addEventListener('keydown', e => {
   if (e.code === 'Enter') {
     e.preventDefault();
 
+    return;
+  }
+  if (e.code === 'Space') {
+    e.preventDefault();
     return;
   }
   if (e.code === 'Backspace') {

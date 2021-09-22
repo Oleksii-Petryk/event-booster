@@ -22,7 +22,7 @@ export default {
   Cyprus: 'CY',
   Czech_Republic: 'CZ',
   Denmark: 'DK',
-  'Dominican Republic': 'DO',
+  Dominican_Republic: 'DO',
   Ecuador: 'EC',
   Estonia: 'EE',
   Faroe_Islands: 'FO',

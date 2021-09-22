@@ -1,7 +1,7 @@
 import DiscoveryApiService from './api-service';
 import { renderEventsList, clearEventsList, renderNotification } from './render-events.js';
-import { options, getPagination } from './pagination';
-import { alertNotice, errorNotice, infoNotice } from './pnotify-module';
+import { options} from './pagination';
+import { infoNotice } from './pnotify-module';
 
 const discoveryApiService = new DiscoveryApiService();
 

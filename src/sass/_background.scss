@@ -3,6 +3,7 @@
   margin-right: auto;
   margin-left: auto;
   background-color: gba(11, 11, 11, 0.5);
+  background-repeat: no-repeat;
 
   @media screen and (max-width: 767.98px) {
     max-width: 450px;
@@ -13,7 +14,6 @@
         rgba(14, 14, 14, 0.8) 100%
       ),
       url('../images/bg/header/mobile-bg-image.png');
-    background-repeat: no-repeat;
     background-size: 108px 90px, 100% 364px, 100% 364px;
 
     @media (min-device-pixel-ratio: 2),
@@ -38,7 +38,6 @@
         rgba(14, 14, 14, 0.8) 100%
       ),
       url('../images/bg/header/tablet-bg-image.png');
-    background-repeat: no-repeat;
     background-size: 180px 150px, 100% 364px, 100% 364px;
 
     @media (min-device-pixel-ratio: 2),
@@ -63,7 +62,6 @@
         rgba(14, 14, 14, 0.8) 100%
       ),
       url('../images/bg/header/desktop-bg-image.png');
-    background-repeat: no-repeat;
     background-size: 238px 201px, 100% 446px, 100% 446px;
 
     @media (min-device-pixel-ratio: 2),

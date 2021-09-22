@@ -1,19 +1,18 @@
 .main__title {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 80px;
+  margin: 0 auto;
+  padding-top: 80px;
+  margin-bottom: 25px;
   max-width: 215px;
 
   font-weight: 900;
   font-size: 18px;
   line-height: 1.22;
-  text-align: center;
   animation: blimp 2s linear 2;
   color: var(--title-color);
   text-shadow: 0 -40px 100px, 0 0 2px, 0 0 0 var(--text-color-descr), 0 10px 3px #000;
 
   @media screen and (min-width: 768px) {
-    margin-top: 40px;
+    padding-top: 40px;
     max-width: 355px;
 
     font-size: 30px;
@@ -22,6 +21,7 @@
 
   @media screen and (min-width: 1280px) {
     max-width: 590px;
+    margin-bottom: 50px;
 
     font-size: 50px;
     line-height: 1.22;

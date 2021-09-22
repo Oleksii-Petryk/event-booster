@@ -13,7 +13,7 @@ function onSelectClick() {
   clearCountrySearch();
   countryListMarkup(sortedCountries);
 
-  refs.optionsWrapper.classList.toggle('active');
+  refs.optionsWrapper.classList.add('active');
   refs.selected.classList.add('colored');
   refs.selected.style.zIndex = '101';
   refs.body.addEventListener('click', selectedMisClick);
@@ -27,7 +27,7 @@ function onWrapperClick(e) {
   refs.optionsWrapper.classList.remove('active');
 
   refs.selected.style.zIndex = '';
-
+  countryListMarkup(sortedCountries);
   refs.body.removeEventListener('click', selectedMisClick);
 }
 
@@ -40,6 +40,7 @@ function selectedMisClick(e) {
     refs.input.value = '';
     searchEventByCountryName('');
     clearCountrySearch();
+    countryListMarkup(sortedCountries);
   }
 }
 
@@ -49,11 +50,7 @@ export function clearSelect() {
 
 refs.selected.addEventListener('focus', () => {
   clearSelect();
+  refs.optionsWrapper.classList.add('active');
   refs.selected.classList.add('colored');
-});
-
-refs.selected.addEventListener('blur', () => {
-  if (refs.selected.textContent === '') {
-    refs.selected.textContent = 'All countries';
-  }
+  refs.body.addEventListener('click', selectedMisClick);
 });

@@ -1,9 +1,7 @@
 import countryDatabase from './countryDatabase';
 import countryListTemplate from '../templates/countryListTemplate.hbs';
-import DiscoveryApiService from './api-service';
 import refs from './refs';
 import searchEventByCountryName from './searchEventByCountryName';
-import { clearSelect } from './dropdown-menu';
 
 export let code = '';
 export let countryArr = [];

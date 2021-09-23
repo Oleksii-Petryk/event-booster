@@ -1,0 +1,109 @@
+
+  <div class='modal-thumb'>
+  <div class='modal js-modal'>
+    <img class='modal__picture' src='{{images.3.url}}' alt='{{name}}' />
+
+    <div class='modal__body'>
+      <div class='modal__cont'>
+        <img class='modal__image' src='{{images.4.url}}' alt='{{name}}' />
+      </div>
+      <div class='modal__cont'>
+        <ul class='list'>
+          <li class='modal__item'>
+            <h3 class='modal__title'>info</h3>
+            <div class="modal__item--info">
+              <p>
+                {{info}}
+                {{#with info}}
+                {{info}}
+                {{else}}
+                Sorry, no info found
+                {{/with}}
+              </p>
+            </div>
+          </li>
+
+          <li class='modal__item'>
+            <h3 class='modal__title'>when</h3>
+            <p>
+              {{dates.start.localDate}}
+              <br />
+              {{dates.start.localTime}} ({{dates.timezone}})
+            </p>
+          </li>
+
+          <li class='modal__item'>
+            <h3 class='modal__title'>where</h3>
+            <p>
+              {{_embedded.venues.0.city.name}}, {{_embedded.venues.0.country.name}}
+              <br />
+              {{_embedded.venues.0.name}}
+              {{#with _embedded.venues.0.name}}
+              {{name}} 
+              {{else}}
+              Sorry, no venues found
+              {{/with}}
+              
+            </p>
+          </li>
+
+          <li class='modal__item'>
+            <h3 class='modal__title' data-attractionId='{{_embedded.attractions.0.id}}'>who</h3>
+            <p>
+              {{name}}
+            </p>
+          </li>
+
+          <li class='modal__item'>
+            <h3 class='modal__title'>prices</h3>
+            <ul class='list'>
+
+              <li class='modal__price'>
+                <p class='modal__text'>
+                  <svg class='modal__icon' viewBox='0 0 44 32'>
+                    <path
+                      d='M4.91 1.269h-4.91v29.461h4.91v-29.461zM17.26 1.269h-4.911v29.461h4.911v-29.461zM24.699 1.269h-4.91v29.461h4.91v-29.461zM44.19 1.269h-7.291v29.461h7.291v-29.461zM9.819 1.269h-2.38v29.461h2.38v-29.461zM29.46 1.269h-2.38v29.461h2.38v-29.461zM34.37 1.269h-2.38v29.461h2.382v-29.461z'
+                    ></path>
+                  </svg>
+                  {{priceRanges.0.type}} {{priceRanges.0.min}}-{{priceRanges.0.max}} {{priceRanges.0.currency}}
+                </p>
+                <a class='modal__button modal__buy-button link' href='{{_embedded.venues.0.url}}' target='_blank' rel='noopener noreferrer'>BUY TICKETS</a>
+              </li>
+
+              <li class='modal__price'>
+                <p class='modal__text'>
+                  <svg class='modal__icon' viewBox='0 0 44 32'>
+                    <path
+                      d='M4.91 1.269h-4.91v29.461h4.91v-29.461zM17.26 1.269h-4.911v29.461h4.911v-29.461zM24.699 1.269h-4.91v29.461h4.91v-29.461zM44.19 1.269h-7.291v29.461h7.291v-29.461zM9.819 1.269h-2.38v29.461h2.38v-29.461zM29.46 1.269h-2.38v29.461h2.38v-29.461zM34.37 1.269h-2.38v29.461h2.382v-29.461z'
+                    >
+                    </path>
+                  </svg>
+                  {{priceRanges.1.type}} {{priceRanges.1.min}}-{{priceRanges.1.max}} {{priceRanges.1.currency}}
+                  {{#with priceRanges.1.type}}
+                  {{type}}
+                  {{else}}
+                  Sorry, no found more prices
+                  {{/with}}
+                </p>
+                <a class='modal__button modal__buy-button link' href='{{_embedded.venues.0.url}}' target='_blank' rel='noopener noreferrer'>BUY TICKETS</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <button class='modal__button modal__more-button' type='button' data-modal-open>
+      MORE FROM THIS AUTHOR
+    </button>
+
+    <button class='modal__close-button' data-modal-close>
+      <div class="modal__outer">
+        <div class="modal__inner">
+          <span class="modal__label">CLOSE</span>
+        </div>
+      </div>
+    </button>
+
+  </div>
+  </div>

@@ -7,22 +7,32 @@
   --grid-item: 2;
   --grid-margin-in: 15px;
   --grid-margin-out: -15px;
+  --grid-margin-top: 30px;
+  --grid-margin-top__out: -30px;
 
   @media screen and (min-width: 767.98px) {
     --grid-item: 3;
     --grid-margin-in: 30px;
     --grid-margin-out: -30px;
+    --grid-margin-top: 45px;
+    --grid-margin-top__out: -45px;
   }
 
   @media screen and (min-width: 1279.98px) {
     --grid-item: 4;
     --grid-margin-in: 70px;
     --grid-margin-out: -70px;
+    --grid-margin-top: 50px;
+    --grid-margin-top__out: -50px;
   }
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 ul,

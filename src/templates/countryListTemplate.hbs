@@ -1,0 +1,13 @@
+<div class='option'>
+  <input type='radio' class='radio' name='country-name' />
+  <label for='country'>All countries</label>
+</div>
+
+{{#each this}}
+  <div class='option'>
+    <input type='radio' class='radio' name='country-name' />
+    <label for='country'>{{this}}</label>
+  </div>
+{{/each}}
+
+{{! All countries }}

@@ -1,0 +1,36 @@
+.back_to_top {
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  bottom: 80px;
+  right: 40px;
+  z-index: 3;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  line-height: 30px;
+  padding-top: 5px;
+  text-decoration: none;
+  font-size: 40px;
+  background: var(--title-color);
+  cursor: pointer;
+  border-radius: 15px 0px;
+  color: var(--text-color-descr);
+  transition: box-shadow 0.15s cubic-bezier(0, 0, 1, 0.74);
+
+  @media screen and (max-width: 767.98px) {
+    width: 35px;
+    height: 35px;
+    font-size: 25px;
+    line-height: 22px;
+  }
+}
+
+.back_to_top:hover {
+  box-shadow: 1px 1px 10px 3px var(--title-color);
+}
+
+.back_to_top__show {
+  opacity: 1;
+  pointer-events: all;
+}

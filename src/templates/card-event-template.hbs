@@ -1,17 +1,44 @@
-<ul class='events list'>
+<ul class='events list animate__animated animate__zoomInDown'>
   {{#each this}}
-    <li class='events__item'>
-      <div class='events__container'>        
-        <img class='events__image' src='{{images.3.url}}' alt='' />        
+    <li class='events__item' data-id="{{id}}">
+      <div class='events__container'>   
+        <img class='events__image'
+        src=
+        {{#if images.3.url}}
+        {{images.3.url}}
+        {{else}}
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFLIw6Vk_fp4CxFrz3G3LJZLJ7uWbJB1PJIsHYdX--_0i6Jj-Emr3_zVdMPwK-y5Z3CJA&usqp=CAU'
+        {{/if}}
+        alt='' />
       </div>
-      <h2 class='events__title'>{{name}}</h2>
-      <p class='events__date'>{{dates.start.localDate}}</p>
+
+      <h2 class='events__title'>
+        {{#if name}}
+        {{name}}
+        {{else}}
+        Event to be determined
+        {{/if}}
+      </h2>
+
+      <p class='events__date'>
+        {{#if dates.start.localDate}}
+        {{ dates.start.localDate}}
+        {{else}}
+        Date to be determined
+        {{/if}}
+      </p>
+
       {{#each _embedded.venues}}
       <p class='events__place'>
         <svg class='events__icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 32"><path d="M11.2 0C5.024 0 0 4.992 0 11.123 0 18.832 11.21 32 11.21 32S22.4 18.451 22.4 11.123C22.4 4.989 17.376 0 11.2 0zm3.379 14.381c-.931.925-2.157 1.386-3.379 1.386s-2.448-.461-3.379-1.386c-.863-.857-1.398-2.045-1.398-3.357s.534-2.5 1.397-3.357c.902-.896 2.102-1.389 3.379-1.389s2.477.493 3.379 1.389a4.733 4.733 0 0 1 0 6.714z" /></svg>
-        {{name}}        
+        {{#if name}}
+        {{name}}
+        {{else}}
+        Place to be determined
+        {{/if}}      
       </p>
       {{/each}}
+
     </li>
   {{/each}}
 </ul>

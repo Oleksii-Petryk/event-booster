@@ -3,6 +3,7 @@
   background: rgba(255, 255, 255, 0.2);
   border-radius: 20px;
   color: var(--brighttheme-text-color);
+  backdrop-filter: blur(20px);
 
   @media screen and (max-width: 767.98px) {
     left: 5%;

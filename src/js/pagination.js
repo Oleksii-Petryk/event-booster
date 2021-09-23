@@ -30,7 +30,7 @@ export const options = {
 };
 
 function countryCode() {
-  if (refs.selected.textContent === 'Choose country') {
+  if (refs.selected.textContent.trim() === 'Choose country') {
     return '';
   }
   if (refs.selected.textContent === 'All countries') {
@@ -39,53 +39,51 @@ function countryCode() {
   return countryDatabase[refs.selected.textContent];
 }
 
-let pagePagination = 1
+let pagePagination = 1;
 
 export function getPagination() {
-    const pagination = new Pagination('pagination', options);
-    const lastButton = document.querySelector('.tui-last')
-    
-    if (options.totalItems < 21) {
-          refs.pagination.classList.add('tui-pagination__hide')
-    } else {
-      refs.pagination.classList.remove('tui-pagination__hide')
-    }
+  const pagination = new Pagination('pagination', options);
+  const lastButton = document.querySelector('.tui-last');
 
-    let totalPage = options.totalItems / options.itemsPerPage
-    let firstButton = document.querySelector('.tui-first')
+  if (options.totalItems < 21) {
+    refs.pagination.classList.add('tui-pagination__hide');
+  } else {
+    refs.pagination.classList.remove('tui-pagination__hide');
+  }
 
-    lastButton.textContent = '... ' + `${Math.ceil(totalPage)}`
+  let totalPage = options.totalItems / options.itemsPerPage;
+  let firstButton = document.querySelector('.tui-first');
 
-    if (options.totalItems > 100 && pagePagination < totalPage - 2) {
-          lastButton.classList.remove('tui-hide')
-    }
-  
-    if (options.totalItems > 100 && pagePagination > 3) {
-          firstButton.classList.remove('tui-hide')
-    }
-  
+  lastButton.textContent = '... ' + `${Math.ceil(totalPage)}`;
+
+  if (options.totalItems > 100 && pagePagination < totalPage - 2) {
+    lastButton.classList.remove('tui-hide');
+  }
+
+  if (options.totalItems > 100 && pagePagination > 3) {
+    firstButton.classList.remove('tui-hide');
+  }
+
   pagination.on('afterMove', async function (eventData) {
     const currentPage = eventData.page;
-    pagePagination = currentPage
+    pagePagination = currentPage;
 
     const discoveryApiService = new DiscoveryApiService();
-    discoveryApiService.page = currentPage - 1
+    discoveryApiService.page = currentPage - 1;
 
-    discoveryApiService.keyWord = refs.input.value
+    discoveryApiService.keyWord = refs.input.value;
 
-    discoveryApiService.countryCode = countryCode()
+    discoveryApiService.countryCode = countryCode();
 
-    options.page = currentPage
+    options.page = currentPage;
     const events = await discoveryApiService.getEventsByInputValue();
 
     refs.mainContent.scrollIntoView({
       behavior: 'smooth',
-      block: 'start'
-    })
-    
+      block: 'start',
+    });
+
     clearEventsList();
     renderEventsList(events);
-    
-  })
+  });
 }
-

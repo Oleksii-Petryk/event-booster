@@ -1,14 +1,22 @@
 import DiscoveryApiService from './api-service.js';
-import { renderEventsList, clearEventsList } from './render-events.js';
+import { renderEventsList, clearEventsList, renderMorefromAuthorNotif } from './render-events.js';
 import { options } from './pagination';
-import { closeModal } from './modal'
-import refs from './refs'
+import { closeModal } from './modal';
+import refs from './refs';
+
+
 
 export default async function getAttractionById() {
     const discoveryApiService = new DiscoveryApiService();
     options.page = 1;
     const id = document.querySelector('[data-attractionId]').dataset.attractionid;
-    discoveryApiService.attractionsId = id;
+  discoveryApiService.attractionsId = id;
+  if (!id) {
+    clearEventsList();
+    renderMorefromAuthorNotif();
+    closeModal();
+    return;
+  }
     try {
     const events = await discoveryApiService.getEventsByAttractionId();
         clearEventsList();

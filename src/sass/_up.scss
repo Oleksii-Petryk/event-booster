@@ -26,11 +26,17 @@
   }
 }
 
-.back_to_top:hover {
-  box-shadow: 1px 1px 10px 3px var(--title-color);
-}
-
 .back_to_top__show {
   opacity: 1;
   pointer-events: all;
+
+  &.back_to_top__hover {
+    box-shadow: 1px 1px 10px 3px var(--title-color);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      box-shadow: 1px 1px 10px 3px var(--title-color);
+    }
+  }
 }

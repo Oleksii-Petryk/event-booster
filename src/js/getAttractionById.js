@@ -13,6 +13,7 @@ export default async function getAttractionById() {
   discoveryApiService.attractionsId = id;
   if (!id) {
     clearEventsList();
+    refs.pagination.style.display = 'none';
     renderMorefromAuthorNotif();
     closeModal();
     return;

@@ -9,6 +9,8 @@ import {
 refs.selected.addEventListener('click', onSelectClick);
 
 function onSelectClick() {
+  refs.selected.setAttribute('contenteditable', 'true');
+  document.querySelector('.selected').focus();
   clearSelect();
   clearCountrySearch();
   countryListMarkup(sortedCountries);
@@ -25,6 +27,7 @@ function onWrapperClick(e) {
   let selectedCountry = e.target.lastElementChild.textContent;
   refs.selected.textContent = selectedCountry;
   refs.optionsWrapper.classList.remove('active');
+  refs.selected.removeAttribute('contenteditable');
 
   refs.selected.style.zIndex = '';
   countryListMarkup(sortedCountries);
@@ -33,6 +36,7 @@ function onWrapperClick(e) {
 
 function selectedMisClick(e) {
   if (e.target !== refs.selected) {
+    refs.selected.removeAttribute('contenteditable');
     refs.optionsWrapper.classList.remove('active');
     refs.body.removeEventListener('click', selectedMisClick);
     refs.selected.style.zIndex = '';

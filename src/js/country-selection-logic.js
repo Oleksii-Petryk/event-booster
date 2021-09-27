@@ -94,6 +94,10 @@ export function clearCountrySearch() {
 }
 
 refs.selected.addEventListener('keydown', e => {
+  if (e.code === 'NumpadEnter') {
+    e.preventDefault();
+    return;
+  }
   if (e.code === 'Enter') {
     e.preventDefault();
 

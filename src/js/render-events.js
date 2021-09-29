@@ -28,6 +28,8 @@ export function renderNotification() {
 
 export function addFooter() {
     refs.footer.classList.add('footer--error');
+    const innerScreenHeight = window.innerHeight;
+    refs.footerText.style.top = innerScreenHeight + "px";
 }
 
 export function removeFooter() {

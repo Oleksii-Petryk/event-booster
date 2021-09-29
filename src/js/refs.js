@@ -15,4 +15,5 @@ export default {
   toUp: document.querySelector('.back_to_top'),
   optionsWrapper: document.querySelector('.options-wrapper'),
   form: document.querySelector('.search-form'),
+  footerText: document.querySelector('.footer-container'),
 };

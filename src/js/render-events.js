@@ -18,12 +18,16 @@ export function catchError() {
     const errorMarkup = errorTemplate();    
     refs.mainContent.innerHTML = errorMarkup;
     addFooter();
+    refs.input.addEventListener('focus', onMobileFooterRemove);
+    refs.selected.addEventListener('focus', onMobileFooterRemove);
 }
 
 export function renderNotification() {
     const notification = countryNotification();
     refs.mainContent.innerHTML = notification;
     addFooter();
+    refs.input.addEventListener('focus', onMobileFooterRemove);
+    refs.selected.addEventListener('focus', onMobileFooterRemove);
 }
 
 export function addFooter() {
@@ -43,4 +47,12 @@ export function renderMorefromAuthorNotif() {
     refs.mainContent.innerHTML = notification;
     addFooter();
 
+}
+
+export function onMobileFooterRemove() {
+    const windowInnerWidth = window.innerWidth;
+    console.log(windowInnerWidth);
+    if (windowInnerWidth < 768) {
+        removeFooter()
+    }
 }
